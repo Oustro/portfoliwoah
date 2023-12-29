@@ -23,7 +23,7 @@ export default function ThemeButton() {
 
   return (
     <div className="group flex items-center gap-4">
-      <code className="hidden group-hover:inline transition text-xs">{theme}</code>
+      <code className="hidden group-hover:inline transition text-xs">Themes Coming Soon</code>
       <div onClick={() => changeTheme(theme)} className="text-lg p-3 rounded transition hover:bg-slate-200">
         {theme === "dark" ? (
           <IoMoon />
