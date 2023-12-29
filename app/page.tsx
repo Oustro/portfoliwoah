@@ -21,8 +21,6 @@ export default function Home() {
           <LinkButton link="/signup">Add your work</LinkButton>
         </div>
       </div>
-
-      
       
     </main>
   )
