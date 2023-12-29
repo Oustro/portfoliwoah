@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { useEffect } from 'react'
 
 import "@/styles/globals.css"
 import Nav from "@/components/special/nav"
