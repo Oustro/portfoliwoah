@@ -26,6 +26,22 @@ export const authOptions = {
       from: process.env.NEXT_PUBLIC_EMAIL_FROM
     })
   ],
+  callbacks: {
+    async session({ session }) {
+      const sessionUser = await prisma.userInfo.findUnique({
+        where: {
+          email: session?.user?.email
+        }
+      })
+
+      return {
+        name: sessionUser?.name || null,
+        email: session?.user?.email || null,
+        employer: sessionUser?.employer || null,
+        ...session
+      }
+    }
+  },
   events: {
     createUser: async (message) => {
       
