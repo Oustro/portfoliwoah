@@ -26,7 +26,6 @@ export default async function Login() {
       <div className="mt-20 text-center">
         <h1 className='mt-8 text-4xl sm:text-5xl'>Create Your <span className={ibm_plex_serif.className}>Portfoliwoah</span>.</h1>
         <Flow />
-        <p className="mt-4 text-sm text-gray-600">By continuing, you agree to the Terms of Service and Privacy Policy.</p>
       </div>
 
     </main>

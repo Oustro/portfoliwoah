@@ -19,7 +19,7 @@ export const authOptions = {
         port: process.env.NEXT_PUBLIC_EMAIL_SERVER_PORT,
         auth: {
           user: process.env.NEXT_PUBLIC_EMAIL_SERVER_USER,
-          pass: process.env.NEXT_PUBLIC_EMAIL_SERVER_PASSWORD
+          pass: process.env.NEXT_PUBLIC_MAIL_SERVER_PASSWORD
         }
       },
       from: process.env.NEXT_PUBLIC_EMAIL_FROM
