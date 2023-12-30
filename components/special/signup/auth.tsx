@@ -1,19 +1,28 @@
 "use client"
 
+import { useState } from "react"
 import { signIn } from "next-auth/react";
 
+import Spinner from "@/components/shared/spinner";
+
 export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }}) {
-  
+  const [loading, setLoading] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    setStep(4)
+
+    setLoading(true)
 
     await signIn('email', { 
       email: userInfo.email, 
       callbackUrl: `${window.location.origin}`,
       redirect: false
     })
+
+    // Save Name, Employer, and Email to Redis
+    // In callback, have adapter create UserInfo table in DB and set session
+
+    setStep(4)
   }
   
   return (
@@ -27,8 +36,14 @@ export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Func
       onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
       required
       />
-      <button type="submit" className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none">Next</button>
-      <button type="button" className="w-full mt-4 p-4 flex items-center gap-2 justify-center rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none" 
+      <button disabled={loading} type="submit" className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none disabled:bg-slate-300">{loading ? (
+        <div className="flex items-center gap-2 justify-center">
+          <Spinner />
+          <span>Loading...</span>
+        </div>
+      ) : 
+      "Next"}</button>
+      <button disabled={loading} type="button" className="w-full mt-4 p-4 flex items-center gap-2 justify-center rounded-lg bg-slate-200 hover:bg-slate-300 disabled:bg-slate-300 transition focus:outline-none" 
       onClick={() => signIn('google', {callbackUrl: `${window.location.origin}`})}>
         Continue with Google
       </button>

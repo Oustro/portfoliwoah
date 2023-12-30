@@ -55,5 +55,20 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model UserInfo {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  employer      String?
+}
+
+model Project {
+  id            String    @id @default(cuid())
+  name          String?
+  description   String?
+  created       DateTime
+  link          String?
+}
+
 
 
