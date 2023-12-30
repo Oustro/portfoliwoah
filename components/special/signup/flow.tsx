@@ -28,7 +28,7 @@ export default function Flow({ font }: { font: string }) {
       ) : step === 3 ? (
         <Auth setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
       ) : step === 4 ? (
-        <Confirm font={font} />
+        <Confirm font={font} email={userInfo.email} />
       ) : (
         <Error setStep={setStep} />
       )}

@@ -5,9 +5,8 @@ import { signIn } from "next-auth/react";
 
 import Spinner from "@/components/shared/spinner";
 
-export default function Auth( { setStep }: { setStep: Function, }) {
+export default function Auth( { setStep, email, setEmail }: { setStep: Function, email: string, setEmail: Function }) {
   const [loading, setLoading] = useState(false)
-  const [email, setEmail] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

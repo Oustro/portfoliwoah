@@ -9,15 +9,16 @@ import Error from "@/components/shared/error"
 
 
 export default function Flow({ font }: { font: string }) {
-  
   const [step, setStep] = useState(1)
+  const [email, setEmail] = useState("")
+
 
   return (
     <>
       {step === 1 ? (
-        <Auth setStep={setStep} />
+        <Auth setStep={setStep} email={email} setEmail={setEmail} />
       ) : step === 2 ? (
-        <Confirm font={font} />
+        <Confirm font={font} email={email} />
       ) : (
         <Error setStep={setStep} />
       )}
