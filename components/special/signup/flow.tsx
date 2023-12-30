@@ -6,6 +6,7 @@ import Name from "@/components/special/signup/name"
 import Work from "@/components/special/signup/work"
 import Auth from "@/components/special/signup/auth"
 import Confirm from "@/components/special/signup/confirm"
+import Error from "@/components/special/signup/error"
 
 
 export default function Flow() {
@@ -25,8 +26,10 @@ export default function Flow() {
         <Work setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
       ) : step === 3 ? (
         <Auth setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
-      ) : (
+      ) : step == 4 ? (
         <Confirm />
+      ) : (
+        <Error />
       )}
 
 

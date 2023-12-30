@@ -19,10 +19,19 @@ export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Func
       redirect: false
     })
 
-    // Save Name, Employer, and Email to Redis
-    // In callback, have adapter create UserInfo table in DB and set session
+    const authRegisterResponse = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
 
-    setStep(4)
+    if (!authRegisterResponse.ok) {
+      return setStep(5)
+    }
+
+    return setStep(4)
   }
   
   return (
