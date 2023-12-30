@@ -1,7 +1,11 @@
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
+import { authOptions } from "@/utils/auth"
+
+import Flow from "@/components/special/login/flow"
+
 import { IBM_Plex_Serif } from "next/font/google"
 
-import BadgeOutline from "@/components/shared/badgeOutline"
-import LinkButton from "@/components/shared/linkButton"
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
     subsets: ['latin'], 
@@ -10,15 +14,18 @@ const ibm_plex_serif = IBM_Plex_Serif(
   }
 )
 
-export default function Login() {
+export default async function Login() {
+  const session = await getServerSession(authOptions)
+
+  if (session) {
+    redirect('/')
+  }
+
   return (
     <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4">
       <div className="mt-20 text-center">
-        <h1 className='mt-8 text-4xl sm:text-5xl'>Login.</h1>
-        <p className="mt-8 text-gray-600">Share what your proud of and connect with others who love design.</p>
-        <div className="mt-4 text-center">
-          <LinkButton link="/signup">Add your work</LinkButton>
-        </div>
+        <h1 className='mt-8 text-4xl sm:text-5xl'>Welcome to <span className={ibm_plex_serif.className}>Portfoliwoah</span>.</h1>
+        <Flow font={ibm_plex_serif.className}/>
       </div>
 
     </main>

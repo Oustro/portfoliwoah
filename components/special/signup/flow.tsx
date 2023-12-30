@@ -6,8 +6,8 @@ import Link from "next/link"
 import Name from "@/components/special/signup/name"
 import Work from "@/components/special/signup/work"
 import Auth from "@/components/special/signup/auth"
-import Confirm from "@/components/special/signup/confirm"
-import Error from "@/components/special/signup/error"
+import Confirm from "@/components/shared/confirm"
+import Error from "@/components/shared/error"
 
 
 export default function Flow({ font }: { font: string }) {
@@ -27,7 +27,7 @@ export default function Flow({ font }: { font: string }) {
         <Work setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
       ) : step === 3 ? (
         <Auth setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
-      ) : step == 4 ? (
+      ) : step === 4 ? (
         <Confirm font={font} />
       ) : (
         <Error setStep={setStep} />
