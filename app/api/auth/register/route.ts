@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     {
       ex: 60 * 60 * 24,
       nx: true
-    });
+    })
 
     return NextResponse.json({ "message": "success" }, { status: 200 })
   

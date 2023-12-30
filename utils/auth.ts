@@ -28,7 +28,21 @@ export const authOptions = {
   ],
   events: {
     createUser: async (message) => {
-      console.log("hi creating user")
+      
+      const redis = new Redis({
+        url: process.env.UPSTASH_URL || '',
+        token: process.env.UPSTASH_TOKEN || '',
+      })
+
+      const newUserInfo = await redis.get(message.user.email ?? '') as { name: string, email: string, employer: string }
+
+      await prisma.userInfo.create({
+        data: {
+          name: newUserInfo.name,
+          email: newUserInfo.email,
+          employer: newUserInfo.employer,
+        }
+      })
     }
   }
 } satisfies NextAuthOptions
