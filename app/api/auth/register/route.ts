@@ -16,6 +16,10 @@ export async function POST(request: NextRequest) {
       name: name,
       employer: employer,
       email: email
+    },
+    {
+      ex: 60 * 60 * 24,
+      nx: true
     });
 
     return NextResponse.json({ "message": "success" }, { status: 200 })
