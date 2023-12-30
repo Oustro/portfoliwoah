@@ -1,12 +1,10 @@
-"use client"
-
-import { useState } from "react"
-
-import Name from "@/components/special/signup/name"
-import Work from "@/components/special/signup/work"
-import OAuth from "@/components/special/signup/oauth"
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
+import { authOptions } from "@/utils/auth"
 
 import { IBM_Plex_Serif } from "next/font/google"
+
+import Flow from "@/components/special/signup/flow"
 
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
@@ -16,20 +14,18 @@ const ibm_plex_serif = IBM_Plex_Serif(
   }
 )
 
-export default function Login() {
-  const [step, setStep] = useState(1)
+export default async function Login() {
+  const session = await getServerSession(authOptions)
+
+  if (session) {
+    redirect('/')
+  }
 
   return (
     <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4">
       <div className="mt-20 text-center">
         <h1 className='mt-8 text-4xl sm:text-5xl'>Create Your <span className={ibm_plex_serif.className}>Portfoliwoah</span>.</h1>
-        {step === 1 ? (
-          <Name setStep={setStep} />
-        ) : step === 2 ? (
-          <Work setStep={setStep} />
-        ) : (
-          <OAuth setStep={setStep} />
-        )}
+        <Flow />
         <p className="mt-4 text-sm text-gray-600">By continuing, you agree to the Terms of Service and Privacy Policy.</p>
       </div>
 

@@ -1,11 +1,14 @@
-import Link from "next/link"
-
-export default function ActionButtonHover({ children, link }: { children: React.ReactNode, link: string }) {
+export default function ActionButtonHover({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) {
+  
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    }
+  }
+  
   return (
-    <Link href={link}>
-      <div className="text-lg p-3 inline-block rounded transition hover:bg-slate-200 ">
-        {children}
-      </div>
-    </Link>
+    <div className="text-sm p-3 inline-block rounded transition hover:bg-slate-200" onClick={handleClick}>
+      {children}
+    </div>
   )
 }
