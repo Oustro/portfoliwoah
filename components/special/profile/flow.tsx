@@ -2,8 +2,15 @@
 
 import { useState } from "react"
 
-export default function Flow({ font }: { font: string }) {
-  const [view, setView] = useState(1)
+import Info from "@/components/special/profile/info"
+import Work from "@/components/special/profile/work"
+import Update from "@/components/special/profile/update"
+
+export default function Flow({ font, name, email, employer }: { font: string, name: string, email: string, employer: string }) {
+  const [view, setView] = useState({
+    index: 0,
+    content: 0
+  })
 
   const menu = [
     {
@@ -11,7 +18,7 @@ export default function Flow({ font }: { font: string }) {
       items: [
         {
           title: "My Work",
-          view: 1,
+          content: <Work font={font} name={name} email={email} employer={employer} />
         }
       ]
     },
@@ -20,11 +27,11 @@ export default function Flow({ font }: { font: string }) {
       items: [
         {
           title: "My Information",
-          view: 2,
+          content: <Info font={font} name={name} email={email} employer={employer} />
         },
         {
           title: "Update Employer",
-          view: 3,
+          content: <Update font={font} name={name} email={email} employer={employer} />
         },
       ]
     }
@@ -40,26 +47,17 @@ export default function Flow({ font }: { font: string }) {
           {menu.map(( data, index ) => (
             <div className={index !== 0 ? 'mt-8' : ''} key={index}>
               <p className="text-lg">{data.overalTitle}</p>
-              {data.items.map(( data, index ) => (
-                <p className="text-sm cursor-pointer hover:text-gray-600 transition mt-4" onClick={() => setView(data.view)} key={index}>{data.title}</p>
+              {data.items.map(( data, indexSecond ) => (
+                <p className="text-sm cursor-pointer hover:text-gray-600 transition mt-4" onClick={() => setView({
+                  index: index,
+                  content: indexSecond
+                })} key={indexSecond}>{data.title}</p>
               ))}
             </div>
           ))}
         </div>
         <div className="bg-red-400 w-full sm:w-[80%]">
-          {view === 1 ? (
-            <div className="h-96">
-              {view}
-            </div>
-          ) : view === 2 ? (
-            <div className="h-96">
-              {view}
-            </div>
-          ) : (
-            <div className="h-96">
-              {view}
-            </div>
-          )}
+          {menu[view.index].items[view.content].content}
         </div>
       </div>
     </main>
