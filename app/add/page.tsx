@@ -12,11 +12,11 @@ const ibm_plex_serif = IBM_Plex_Serif(
   }
 )
 
-export default async function Profile() {
+export default async function Add() {
   const session = await getServerSession(authOptions)
 
   if (!session) {
-    redirect('/')
+    redirect('/register/login')
   }
   
 

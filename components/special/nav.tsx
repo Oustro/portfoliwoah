@@ -47,6 +47,7 @@ export default async function Nav() {
       </Link>
       {session ? (
         <div className="flex items-center gap-4">
+          <LinkButton link="/add"><span className="flex gap-1 items-center">Add Work <MdAdd /></span></LinkButton>
           <LinkButtonHover link="/profile">Profile</LinkButtonHover>
           <ImageDropDown imageSrc="/userIcon.png" altDescription="The Portfoliwoah logo in a circle." location="w-64 mt-2 -ml-48">
             <div className="pb-4 text-right">
