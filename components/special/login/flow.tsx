@@ -25,7 +25,7 @@ export default function Flow({ font }: { font: string }) {
 
 
       {step <= 1 && (
-        <p className="mt-4 text-sm text-gray-600"><span className={`${font} text-base`}>Don&apos;t have an account?</span> <Link href="/register/signup" className="underline">Sign up instead</Link>.</p>
+        <p className="mt-4 text-sm"><span className={`${font} text-base`}>Don&apos;t have an account?</span> <Link href="/register/signup" className="underline transition hover:text-gray-600">Sign up instead</Link>.</p>
       )}
     </>
   )
