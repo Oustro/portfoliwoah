@@ -22,6 +22,8 @@ export default async function Profile() {
   }  
 
   return (
-    <Flow font={ibm_plex_serif.className} name={session.name} email={session.email ?? ""} employer={session.employer} />
+    <main className="min-h-screen mb-16">
+      <Flow font={ibm_plex_serif.className} name={session.name} email={session.email ?? ""} employer={session.employer} />
+    </main>
   )
 }

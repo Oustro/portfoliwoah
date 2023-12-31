@@ -27,18 +27,18 @@ export default function Flow({ font, name, email, employer }: { font: string, na
       items: [
         {
           title: "My Information",
-          content: <Info font={font} name={name} email={email} employer={employer} />
+          content: <Info setView={setView} name={name} email={email} employer={employer} />
         },
         {
           title: "Update Employer",
-          content: <Update font={font} name={name} email={email} employer={employer} />
+          content: <Update name={name} email={email} employer={employer} />
         },
       ]
     }
   ]
 
   return (
-    <main>
+    <>
       <div className="pt-4 pb-8 px-4 sm:px-16">
         <h1 className={`${font} mt-8 text-4xl sm:text-5xl`}>My Profile</h1>
       </div>
@@ -56,10 +56,10 @@ export default function Flow({ font, name, email, employer }: { font: string, na
             </div>
           ))}
         </div>
-        <div className="bg-red-400 w-full sm:w-[80%]">
+        <div className="w-full sm:w-[80%]">
           {menu[view.index].items[view.content].content}
         </div>
       </div>
-    </main>
+    </>
   )
 }
