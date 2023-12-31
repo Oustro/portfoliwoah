@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 
 import Image from "next/image"
 
-export default function ImageDropDown({ children, imageSrc, altDescription }: { children: React.ReactNode, imageSrc: string, altDescription: string }) {
+export default function ImageDropDown({ children, imageSrc, altDescription, location }: { children: React.ReactNode, imageSrc: string, altDescription: string, location: string }) {
   const [dropdown, setDropdown] = useState(false)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function ImageDropDown({ children, imageSrc, altDescription }: { 
   const menuRef = useRef<HTMLDivElement>(null)
   
   return (
-    <div onClick={() => setDropdown(o => !o)} className="border rounded-full transition">
+    <div onClick={() => setDropdown(o => !o)} className="border-2 rounded-full transition-all">
       <Image
       src={imageSrc}
       alt={altDescription}
@@ -32,7 +32,7 @@ export default function ImageDropDown({ children, imageSrc, altDescription }: { 
       className="rounded-full cursor-pointer hover:bg-slate-300 p-0.5"
       />
       {dropdown && (
-        <div ref={menuRef} className="rounded-lg fixed mt-2 w-64 p-4 bg-white border -ml-48">
+        <div ref={menuRef} className={`rounded-lg fixed p-4 bg-white border ${location}`}>
           {children}
         </div>
       )}

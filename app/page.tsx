@@ -2,6 +2,7 @@ import { IBM_Plex_Serif } from "next/font/google"
 
 import BadgeOutline from "@/components/shared/badgeOutline"
 import LinkButton from "@/components/shared/linkButton"
+
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
     subsets: ['latin'], 
