@@ -70,6 +70,7 @@ model Project {
   created     DateTime
   link        String?
   clicks      Int       @default(0)
+  image       String?
   userEmail   String?   @unique
   userInfo    UserInfo? @relation(fields: [userEmail], references: [email])
 }
