@@ -6,7 +6,7 @@ import Info from "@/components/special/profile/info"
 import Work from "@/components/special/profile/work"
 import Update from "@/components/special/profile/update"
 
-export default function Flow({ name, email, employer }: { name: string, email: string, employer: string }) {
+export default function Flow({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
   const [view, setView] = useState({
     index: 0,
     content: 0
@@ -14,7 +14,7 @@ export default function Flow({ name, email, employer }: { name: string, email: s
 
   const menu = [
     {
-      overalTitle: "Projects",
+      overallTitle: "Projects",
       items: [
         {
           title: "My Work",
@@ -23,7 +23,7 @@ export default function Flow({ name, email, employer }: { name: string, email: s
       ]
     },
     {
-      overalTitle: "General",
+      overallTitle: "General",
       items: [
         {
           title: "My Information",
@@ -43,7 +43,7 @@ export default function Flow({ name, email, employer }: { name: string, email: s
         <div className="hidden sm:block sticky top-20 h-96 w-[20%]">
           {menu.map(( data, index ) => (
             <div className={index !== 0 ? 'mt-8' : ''} key={index}>
-              <p className="text-lg">{data.overalTitle}</p>
+              <p className={`${font} text-xl`}>{data.overallTitle}</p>
               {data.items.map(( data, indexSecond ) => (
                 <p className="text-sm cursor-pointer hover:text-gray-600 transition mt-4" onClick={() => setView({
                   index: index,
