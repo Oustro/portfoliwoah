@@ -1,7 +1,6 @@
 import { Redis } from '@upstash/redis'
 import { NextResponse, NextRequest } from 'next/server'
 
-
 export async function POST(request: NextRequest) {
 
   const { name, employer, email } = await request.json()

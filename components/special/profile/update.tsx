@@ -5,14 +5,33 @@ import { useState } from "react"
 import ActionButton from "@/components/shared/actionButton"
 import Spinner from "@/components/shared/spinner"
 
+import { useRouter } from "next/navigation"
+
 export default function Update({ email, employer }: { email: string, employer: string }) {
   const [loading, setLoading] = useState(false)
+  const [newEmployer, setNewEmployer] = useState(employer)
+
+  const router = useRouter()
 
   const updateEmployer = async (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault()
 
     setLoading(true)
-    
+
+    await fetch('/api/user/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        newEmployer: newEmployer,
+        email: email,
+      })
+    })
+
+    router.refresh()
+
+    setLoading(false)
   }
 
   return (
@@ -21,7 +40,8 @@ export default function Update({ email, employer }: { email: string, employer: s
         <p className="text-lg sm:text-xl mb-4 font-bold">Where are you working now?</p>
         <input
         className="w-full sm:w-[50%] pl-2 py-4 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
-        placeholder={employer}
+        placeholder={newEmployer}
+        onChange={(e) => setNewEmployer(e.target.value)}
         required
         />
       </div>

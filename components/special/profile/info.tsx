@@ -2,6 +2,7 @@ import ActionButton from "@/components/shared/actionButton"
 import Delete from "@/components/special/delete"
 
 export default function Info({ setView, name, email, employer }: { setView: Function, name: string, email: string, employer: string }) {
+
   return (
     <div className="mb-16">
       <div className="bg-slate-200 pt-4 pb-6 px-4 rounded-t-xl">
