@@ -4,6 +4,8 @@ import { authOptions } from "@/utils/auth"
 
 import { IBM_Plex_Serif } from "next/font/google"
 
+import Form from "@/components/special/add/form"
+
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
     subsets: ['latin'], 
@@ -24,6 +26,7 @@ export default async function Profile() {
       <div className="pt-4 pb-8 px-4 sm:px-16">
         <h1 className={`${ibm_plex_serif.className} mt-8 text-4xl sm:text-5xl`}>Add Work</h1>
       </div>
+      <Form email={session?.email || ""}/>
     </main>
   )
 }
