@@ -12,19 +12,17 @@ const ibm_plex_serif = IBM_Plex_Serif(
   }
 )
 
-export default async function Add() {
+export default async function Profile() {
   const session = await getServerSession(authOptions)
 
   if (!session) {
-    redirect('/register/login')
-  }
-  
+    redirect('/')
+  }  
 
   return (
-    <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4">
-      <div className="mt-20 px-16">
-        <h1 className={`${ibm_plex_serif.className} mt-8 text-4xl sm:text-5xl`}>My Profile</h1>
-        <p className="mt-8 text-gray-600 text-xs sm:text-base">Share what your proud of and connect with others who love design.</p>
+    <main className="min-h-screen">
+      <div className="pt-4 pb-8 px-4 sm:px-16">
+        <h1 className={`${ibm_plex_serif.className} mt-8 text-4xl sm:text-5xl`}>Add Work</h1>
       </div>
     </main>
   )

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-export default function Work({ font, name, email, employer }: { font: string, name: string, email: string, employer: string }) {
+export default function Work({ email }: { email: string }) {
 
   const [work, setWork] = useState([])
   const [loading, setLoading] = useState(true)

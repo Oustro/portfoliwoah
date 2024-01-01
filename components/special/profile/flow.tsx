@@ -6,7 +6,7 @@ import Info from "@/components/special/profile/info"
 import Work from "@/components/special/profile/work"
 import Update from "@/components/special/profile/update"
 
-export default function Flow({ font, name, email, employer }: { font: string, name: string, email: string, employer: string }) {
+export default function Flow({ name, email, employer }: { name: string, email: string, employer: string }) {
   const [view, setView] = useState({
     index: 0,
     content: 0
@@ -18,7 +18,7 @@ export default function Flow({ font, name, email, employer }: { font: string, na
       items: [
         {
           title: "My Work",
-          content: <Work font={font} name={name} email={email} employer={employer} />
+          content: <Work email={email} />
         }
       ]
     },
@@ -39,9 +39,6 @@ export default function Flow({ font, name, email, employer }: { font: string, na
 
   return (
     <>
-      <div className="pt-4 pb-8 px-4 sm:px-16">
-        <h1 className={`${font} mt-8 text-4xl sm:text-5xl`}>My Profile</h1>
-      </div>
       <div className="flex px-4 sm:px-16 mt-8">
         <div className="hidden sm:block sticky top-20 h-96 w-[20%]">
           {menu.map(( data, index ) => (
