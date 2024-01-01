@@ -17,7 +17,7 @@ export default function Work({ font, name, email, employer }: { font: string, na
     getWork()
     setLoading(false)
 
-  }, [])
+  }, [email])
 
   return (
     <div className="mb-16">
