@@ -31,7 +31,7 @@ export default function Flow({ font, name, email, employer }: { font: string, na
         },
         {
           title: "Update Employer",
-          content: <Update name={name} email={email} employer={employer} />
+          content: <Update email={email} employer={employer} />
         },
       ]
     }

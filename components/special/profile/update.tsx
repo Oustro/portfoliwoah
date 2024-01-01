@@ -1,8 +1,22 @@
-import ActionButton from "@/components/shared/actionButton"
+"use client"
 
-export default function Update({ name, email, employer }: { name: string, email: string, employer: string }) {
+import { useState } from "react"
+
+import ActionButton from "@/components/shared/actionButton"
+import Spinner from "@/components/shared/spinner"
+
+export default function Update({ email, employer }: { email: string, employer: string }) {
+  const [loading, setLoading] = useState(false)
+
+  const updateEmployer = async (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault()
+
+    setLoading(true)
+    
+  }
+
   return (
-    <div>
+    <form onSubmit={(e) => updateEmployer(e)}>
       <div className="bg-slate-200 pt-4 pb-6 px-4 rounded-t-xl">
         <p className="text-lg sm:text-xl mb-4 font-bold">Where are you working now?</p>
         <input
@@ -13,8 +27,19 @@ export default function Update({ name, email, employer }: { name: string, email:
       </div>
       <div className="bg-white border py-3 px-4 flex items-center justify-between rounded-b-xl">
         <p className="hidden sm:block text-sm">This will be reflected on all new projects, not ones currently released.</p>
-        <ActionButton>Update Employer</ActionButton>
+        <button type="submit">
+          <ActionButton>
+            {loading ? (
+              <div className="flex items-center gap-2 justify-center">
+                <Spinner />
+                <span>Loading...</span>
+              </div>
+            ) : 
+              "Update Employer"
+            }
+          </ActionButton>
+        </button>
       </div>
-    </div>
+    </form>
   )
 }
