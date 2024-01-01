@@ -64,14 +64,14 @@ model UserInfo {
 }
 
 model Project {
-  id            String    @id @default(cuid())
-  name          String?
-  description   String?
-  created       DateTime
-  link          String?
-  user          UserInfo? @relation(fields: [userId], references: [id])
-  userId        String?
-  clicks        Int
+  id          String    @id @default(cuid())
+  name        String?
+  description String?
+  created     DateTime
+  link        String?
+  clicks      Int       @default(0)
+  userInfoId  String?   @unique
+  userInfo    UserInfo? @relation(fields: [userInfoId], references: [id])
 }
 
 

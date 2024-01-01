@@ -34,12 +34,12 @@ export default function Info({ setView, name, email, employer }: { setView: Func
         </div>
       </div>
       <div className="bg-red-400 text-white pt-4 pb-6 px-4 mt-8 rounded-t-xl">
-        <p className="text-xl font-bold mb-3">Delete Account</p>
-        <BadgeOutline>This action cannot be undone.</BadgeOutline>
+        <p className="text-xl font-bold mb-3">Delete Account Activity</p>
+        <BadgeOutline>All data associated with this account will be deleted.</BadgeOutline>
       </div>
       <div className="bg-white border flex justify-between items-center p-5 rounded-b-xl">
-        <p className="hidden sm:block text-sm">All data associated with this account will be deleted.</p>
-        <Delete />
+        <p className="hidden sm:block text-sm">This action cannot be undone.</p>
+        <Delete email={email}/>
       </div>
 
     </div>

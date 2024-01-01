@@ -51,7 +51,7 @@ export default function Update({ email, employer }: { email: string, employer: s
           <ActionButton>
             {loading ? (
               <div className="flex items-center gap-2 justify-center">
-                <Spinner />
+                <Spinner color="slate-800"/>
                 <span>Loading...</span>
               </div>
             ) : 

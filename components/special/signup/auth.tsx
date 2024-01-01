@@ -53,7 +53,7 @@ export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Func
       <button disabled={loading} type="submit" className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none disabled:bg-slate-300">
         {loading ? (
           <div className="flex items-center gap-2 justify-center">
-            <Spinner />
+            <Spinner color="slate-800"/>
             <span>Loading...</span>
           </div>
         ) : 
