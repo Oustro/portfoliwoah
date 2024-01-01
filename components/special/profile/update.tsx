@@ -46,7 +46,7 @@ export default function Update({ email, employer }: { email: string, employer: s
         />
       </div>
       <div className="bg-white border py-3 px-4 flex items-center justify-between rounded-b-xl">
-        <p className="hidden sm:block text-sm">This will be reflected on all new projects, not ones currently released.</p>
+        <p className="hidden sm:block text-sm">This change will be reflected on all your project.</p>
         <button type="submit">
           <ActionButton>
             {loading ? (
