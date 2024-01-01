@@ -36,8 +36,8 @@ export default function Flow({ font }: { font: string }) {
 
       {step <= 3 && (
         <>
-          <p className="mt-4 text-sm text-gray-600">By continuing, you agree to the Terms of Service and Privacy Policy.</p>
-          <p className="mt-4 text-sm text-gray-600"><span className={`${font} text-base`}>Have an account?</span> <Link href="/register/login" className="underline">Login instead</Link>.</p>
+          <p className="mt-4 text-sm">By continuing, you agree to the <span className="underline transition hover:text-gray-600"><Link href="/legal">Terms of Service and Privacy Policy.</Link></span></p>
+          <p className="mt-4 text-sm"><span className={`${font} text-base`}>Have an account? </span><Link href="/register/login" className="underline transition hover:text-gray-600">Login instead</Link>.</p>
         </>
       )}
     </>
