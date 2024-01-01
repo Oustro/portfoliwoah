@@ -6,19 +6,11 @@ export async function POST(request: NextRequest) {
   const { email } = await request.json()
 
   try {
-    const user = await prisma.userInfo.findUnique({
-      where: {
-        email: email
+    await prisma.project.deleteMany({
+      where: { 
+        userEmail: email
       },
     });
-  
-    if (user) {
-      await prisma.project.deleteMany({
-        where: { 
-          userInfoId: user.id
-        },
-      });
-    }
       
     return NextResponse.json({ "message": "success" }, { status: 200 })
   
