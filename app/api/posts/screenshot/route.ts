@@ -25,7 +25,9 @@ export async function GET(request: NextRequest) {
     }
 
     let page = await browser.newPage()
-    await page.goto(url)
+    await page.goto(url, {
+      waitUntil: 'networkidle2'
+    })
     const imageBuffer = await page.screenshot()
 
     const filename = 'uploaded_on_' + Date.now() + '.jpg'
