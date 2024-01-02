@@ -3,3 +3,13 @@ export interface redisData {
   employer: string
   email: string
 }
+
+export interface projectData {
+  name: string
+  description: string
+  created: Date
+  link: string
+  clicks: number
+  image: string
+  userEmail: string
+}

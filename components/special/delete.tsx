@@ -30,7 +30,7 @@ export default function Delete({ email }: { email: string }) {
       <button disabled={loading} className="disabled:bg-red-500 text-sm p-3 inline-block text-white rounded-lg bg-red-400 hover:bg-red-500 transition cursor-pointer">
         {loading ? (
           <div className="flex items-center gap-2 justify-center">
-            <Spinner color={"white"}/>
+            <Spinner color={"white"} />
             <span>Loading...</span>
           </div>
         ) : 

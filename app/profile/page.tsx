@@ -26,7 +26,7 @@ export default async function Profile() {
       <div className="pt-4 pb-8 px-4 sm:px-16">
         <h1 className={`${ibm_plex_serif.className} mt-8 text-4xl sm:text-5xl`}>My Profile</h1>
       </div>
-      <Flow name={session.name ?? ""} email={session.email ?? ""} employer={session.employer ?? ""} />
+      <Flow name={session.name ?? ""} email={session.email ?? ""} employer={session.employer ?? ""} font={ibm_plex_serif.className} />
     </main>
   )
 }
