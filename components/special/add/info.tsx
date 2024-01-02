@@ -1,10 +1,11 @@
 import { projectData } from "@/lib/types"
 
-export default function Info({ setStep, setPostInfo, postInfo }: { setStep: Function, setPostInfo: Function, postInfo: projectData}) {
+export default function Info({ setStep, setPostInfo, postInfo, getSS }: { setStep: Function, setPostInfo: Function, postInfo: projectData, getSS: Function }) {
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStep(3)
+    await getSS(postInfo.link)
   }
 
   return (

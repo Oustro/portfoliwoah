@@ -1,10 +1,9 @@
 import { projectData } from "@/lib/types"
 
-export default function Link({ setStep, setPostInfo, postInfo, getSS }: { setStep: Function, setPostInfo: Function, postInfo: projectData, getSS: Function }) {
+export default function Link({ setStep, setPostInfo, postInfo }: { setStep: Function, setPostInfo: Function, postInfo: projectData }) {
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    getSS(postInfo.link)
     setStep(2)
   }
 

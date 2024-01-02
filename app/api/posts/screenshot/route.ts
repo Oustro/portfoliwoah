@@ -14,14 +14,17 @@ export async function GET(request: NextRequest) {
       const puppeteer = require('puppeteer-core')
       browser = await puppeteer.launch({
         args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
+        defaultViewport: {width: 1920, height: 1080},
         executablePath: await chromium.executablePath(),
         headless: chromium.headless,
       })
     } 
     else {
       const puppeteer = require('puppeteer')
-      browser = await puppeteer.launch({headless: 'new'})
+      browser = await puppeteer.launch({
+        headless: 'new',
+        defaultViewport: {width: 1920, height: 1080},
+      })
     }
 
     let page = await browser.newPage()
@@ -37,7 +40,7 @@ export async function GET(request: NextRequest) {
       token: process.env.BLOB_READ_WRITE_TOKEN
     });
 
-    return NextResponse.json({ "posts": blob.url, "message": "success" }, { status: 200 })
+    return NextResponse.json({ "imageUrl": blob.url, "message": "success" }, { status: 200 })
   
   } catch (e) {
     console.log(e)

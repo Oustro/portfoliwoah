@@ -42,6 +42,8 @@ export default function Flow({ font, email }: { font: string, email: string }) {
   const getScreenShot = async (url: string) => {
     const res = await fetch(`/api/posts/screenshot?url=${url}`)
     const data = await res.json()
+
+    setPostInfo({ ...postInfo, image: data.imageUrl })
   }
 
   return (
@@ -62,11 +64,11 @@ export default function Flow({ font, email }: { font: string, email: string }) {
         </div>
         <div className="w-full sm:w-[80%]">
           {step === 1 ? (
-            <Link setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
+            <Link setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
           ) : step === 2 ? (
-            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
           ) : (
-            <Preview setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+            <Preview setStep={setStep} postInfo={postInfo} />
           )}
         </div>
       </div>
