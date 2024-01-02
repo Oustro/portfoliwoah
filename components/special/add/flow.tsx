@@ -40,7 +40,8 @@ export default function Flow({ font, email }: { font: string, email: string }) {
   ]
 
   const getScreenShot = async (url: string) => {
-    
+    const res = await fetch(`/api/posts/screenshot?url=${url}`)
+    const data = await res.json()
   }
 
   return (
