@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import Link from "@/components/special/add/link"
 import Info from "@/components/special/add/info"
+import Preview from "@/components/special/add/preview"
 
 import { projectData } from "@/lib/types"
 
@@ -23,17 +24,17 @@ export default function Flow({ font, email }: { font: string, email: string }) {
   const steps = [
     {
       title: "Upload Link",
-      description: "Upload a link to your work",
+      description: "Upload a link of your work.",
       stepNumber: 1,
     },
     {
       title: "Add Information",
-      description: "Add information about your work",
+      description: "Add information about your work.",
       stepNumber: 2,
     },
     {
       title: "Preview and Submit",
-      description: "Preview your work and submit",
+      description: "Preview your work and submit.",
       stepNumber: 3,
     }
   ]
@@ -64,7 +65,7 @@ export default function Flow({ font, email }: { font: string, email: string }) {
           ) : step === 2 ? (
             <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
           ) : (
-            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+            <Preview setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
           )}
         </div>
       </div>
