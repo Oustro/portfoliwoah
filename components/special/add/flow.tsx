@@ -2,10 +2,24 @@
 
 import { useState } from "react"
 
+import Link from "@/components/special/add/link"
+import Info from "@/components/special/add/info"
+
+import { projectData } from "@/lib/types"
+
 export default function Flow({ font, email }: { font: string, email: string }) {
 
   const [step, setStep] = useState(1)
-  
+  const [postInfo, setPostInfo] = useState<projectData>({
+    name: "",
+    description: "",
+    created: new Date(),
+    link: "",
+    clicks: 0,
+    image: "",
+    userEmail: email,
+  })
+
   const steps = [
     {
       title: "Upload Link",
@@ -25,7 +39,7 @@ export default function Flow({ font, email }: { font: string, email: string }) {
   ]
 
   const getScreenShot = async (url: string) => {
-
+    
   }
 
   return (
@@ -45,7 +59,13 @@ export default function Flow({ font, email }: { font: string, email: string }) {
           ))}
         </div>
         <div className="w-full sm:w-[80%]">
-
+          {step === 1 ? (
+            <Link setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
+          ) : step === 2 ? (
+            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+          ) : (
+            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+          )}
         </div>
       </div>
     </>
