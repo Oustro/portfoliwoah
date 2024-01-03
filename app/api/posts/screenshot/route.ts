@@ -14,12 +14,13 @@ export async function GET(request: NextRequest) {
       const puppeteer = require('puppeteer-core')
 
       browser = await puppeteer.launch({
-        args: chromium.args,
+        args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
         defaultViewport: {width: 1920, height: 1080},
         executablePath: await chromium.executablePath(
           "https://github.com/Sparticuz/chromium/releases/download/v110.0.1/chromium-v110.0.1-pack.tar"
         ),
         headless: chromium.headless,
+        ignoreHTTPSErrors: true,
       })
     } 
     else {
