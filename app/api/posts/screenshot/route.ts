@@ -10,13 +10,16 @@ export async function GET(request: NextRequest) {
   try {
 
     if (process.env.NODE_ENV !== 'development') {
-      const chromium = require('@sparticuz/chromium')
+      const chromium = require('@sparticuz/chromium-min')
       const puppeteer = require('puppeteer-core')
       browser = await puppeteer.launch({
-        args: chromium.args,
+        args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
         defaultViewport: {width: 1920, height: 1080},
-        executablePath: await chromium.executablePath(),
+        executablePath: await chromium.executablePath(
+          "https://github.com/Sparticuz/chromium/releases/download/v119.0.2/chromium-v119.0.2-pack.tar"
+        ),
         headless: chromium.headless,
+        ignoreHTTPSErrors: true,
       })
     } 
     else {
