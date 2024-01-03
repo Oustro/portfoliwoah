@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
     if (process.env.NODE_ENV !== 'development') {
       const chromium = require('@sparticuz/chromium-min')
       const puppeteer = require('puppeteer-core')
-
       browser = await puppeteer.launch({
         args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
         defaultViewport: {width: 1920, height: 1080},
