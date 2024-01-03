@@ -8,7 +8,7 @@ import Preview from "@/components/special/add/preview"
 
 import { projectData } from "@/lib/types"
 
-export default function Flow({ font, email }: { font: string, email: string }) {
+export default function Flow({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
 
   const [step, setStep] = useState(1)
   const [postInfo, setPostInfo] = useState<projectData>({
@@ -68,7 +68,7 @@ export default function Flow({ font, email }: { font: string, email: string }) {
           ) : step === 2 ? (
             <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
           ) : (
-            <Preview setStep={setStep} postInfo={postInfo} />
+            <Preview setStep={setStep} postInfo={postInfo} name={name} employer={employer} />
           )}
         </div>
       </div>
