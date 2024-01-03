@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 
-import Link from "@/components/special/add/link"
 import Info from "@/components/special/add/info"
 import Preview from "@/components/special/add/preview"
+import Confirm from "@/components/special/add/confirm"
 
 import { projectData } from "@/lib/types"
 
-export default function Flow({ font, email }: { font: string, email: string }) {
+export default function Flow({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
 
   const [step, setStep] = useState(1)
   const [postInfo, setPostInfo] = useState<projectData>({
@@ -23,24 +23,27 @@ export default function Flow({ font, email }: { font: string, email: string }) {
 
   const steps = [
     {
-      title: "Upload Link",
-      description: "Upload a link of your work.",
+      title: "Add Your Work",
+      description: "Upload a link and add relevant information.",
       stepNumber: 1,
-    },
-    {
-      title: "Add Information",
-      description: "Add information about your work.",
-      stepNumber: 2,
     },
     {
       title: "Preview and Submit",
       description: "Preview your work and submit.",
+      stepNumber: 2,
+    },
+    {
+      title: "Post Confirmation",
+      description: "Check your post and see what others think of it too.",
       stepNumber: 3,
     }
   ]
 
   const getScreenShot = async (url: string) => {
-    
+    const res = await fetch(`/api/posts/screenshot?url=${url}`)
+    const data = await res.json()
+
+    setPostInfo({ ...postInfo, image: data.imageUrl })
   }
 
   return (
@@ -61,11 +64,11 @@ export default function Flow({ font, email }: { font: string, email: string }) {
         </div>
         <div className="w-full sm:w-[80%]">
           {step === 1 ? (
-            <Link setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
+            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
           ) : step === 2 ? (
-            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+            <Preview setStep={setStep} postInfo={postInfo} name={name} employer={employer} />
           ) : (
-            <Preview setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} />
+            <Confirm />
           )}
         </div>
       </div>

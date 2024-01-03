@@ -30,7 +30,7 @@ export const authOptions = {
     async session({ session }) {
       const sessionUser = await prisma.userInfo.findUnique({
         where: {
-          email: session?.user?.email
+          email: session?.user?.email || ""
         }
       })
 
