@@ -71,7 +71,7 @@ model Project {
   link        String?   @unique
   clicks      Int       @default(0)
   image       String?
-  userEmail   String?   @unique
+  userEmail   String?
   userInfo    UserInfo? @relation(fields: [userEmail], references: [email])
 }
 

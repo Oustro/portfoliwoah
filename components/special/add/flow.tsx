@@ -66,7 +66,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
           ) : step === 2 ? (
             <Preview setStep={setStep} postInfo={postInfo} name={name} employer={employer} />
           ) : (
-            <Confirm />
+            <Confirm font={font} />
           )}
         </div>
       </div>
