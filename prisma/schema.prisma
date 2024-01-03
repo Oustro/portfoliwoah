@@ -68,7 +68,7 @@ model Project {
   name        String?
   description String?
   created     DateTime
-  link        String?
+  link        String?   @unique
   clicks      Int       @default(0)
   image       String?
   userEmail   String?   @unique

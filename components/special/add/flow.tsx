@@ -14,9 +14,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   const [postInfo, setPostInfo] = useState<projectData>({
     name: "",
     description: "",
-    created: new Date(),
     link: "",
-    clicks: 0,
     image: "",
     userEmail: email,
   })
@@ -40,8 +38,8 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   ]
 
   const getScreenShot = async (url: string) => {
-    const res = await fetch(`/api/posts/screenshot?url=${url}`)
-    const data = await res.json()
+    const postScreenshotResponse = await fetch(`/api/posts/screenshot?url=${url}`)
+    const data = await postScreenshotResponse.json()
 
     setPostInfo({ ...postInfo, image: data.imageUrl })
   }

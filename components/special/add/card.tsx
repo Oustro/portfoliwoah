@@ -22,7 +22,7 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
         <div className="mt-2 px-1 text-sm flex justify-between">
           <div>
             <p>{postInfo.name}</p>
-            <p className="text-xs flex items-center gap-1"><HiCursorClick /> {postInfo.clicks}</p>
+            <p className="text-xs flex items-center gap-1"><HiCursorClick /> 0</p>
           </div>
           <div className="text-right">
             <p>{name}</p>
