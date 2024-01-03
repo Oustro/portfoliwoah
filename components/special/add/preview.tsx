@@ -15,6 +15,7 @@ export default function Preview({ setStep, postInfo, name, employer }: { setStep
     e.preventDefault()
     setLoading(true)
     console.log("saving post")
+    setStep(3)
   }
 
   return (
