@@ -26,6 +26,8 @@ export default function Preview({ setStep, postInfo, name, employer }: { setStep
     if (postCreateResponse.ok) {
       return setStep(3)
     }
+
+    setLoading(false)
   }
 
   return (
