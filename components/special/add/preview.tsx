@@ -39,7 +39,7 @@ export default function Preview({ setStep, postInfo, name, employer }: { setStep
         {!postInfo.image || loading ? (
           <div className="flex items-center gap-2 justify-center">
             <Spinner color="slate-800"/>
-            <span>Generating Image...</span>
+            <span>Loading...</span>
           </div>
         ) : 
           "Post Work"
