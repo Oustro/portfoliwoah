@@ -13,10 +13,6 @@ export async function GET(request: NextRequest) {
       const chromium = require('@sparticuz/chromium-min')
       const puppeteer = require('puppeteer-core')
 
-      await chromium.font(
-        "https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf"
-      );
-      
       browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: {width: 1920, height: 1080},
