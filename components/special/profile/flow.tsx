@@ -18,7 +18,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
       items: [
         {
           title: "My Work",
-          content: <Work email={email} />
+          content: <Work name={name} email={email} employer={employer} font={font} />
         }
       ]
     },
@@ -39,7 +39,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
 
   return (
     <>
-      <div className="flex px-4 sm:px-16 mt-8">
+      <div className="flex px-4 sm:px-16 sm:mt-8">
         <div className="hidden sm:block sticky top-20 h-96 w-[20%]">
           {menu.map(( data, index ) => (
             <div className={index !== 0 ? 'mt-8' : ''} key={index}>

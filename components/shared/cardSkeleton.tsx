@@ -1,10 +1,6 @@
 import Image from "next/image";
 
-import { projectData } from "@/lib/types";
-
-import { HiCursorClick } from "react-icons/hi";
-
-export default function CardSkeleton({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
+export default function CardSkeleton() {
   return (
     <div className="group transition-all rounded-lg">
       <div className="animate-pulse bg-slate-200 rounded-lg">
@@ -19,12 +15,12 @@ export default function CardSkeleton({ postInfo, name, employer } : { postInfo: 
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
         <div>
-          <p>{postInfo.name}</p>
-          <p className="text-xs flex items-center gap-1"><HiCursorClick /> 0</p>
+          <p className="bg-slate-200 rounded animate-pulse"><span className="opacity-0">Project Name</span></p>
+          <p className="bg-slate-200 mt-1 rounded animate-pulse inline-block"><span className="opacity-0">0 click</span></p>
         </div>
         <div className="text-right">
-          <p>{name}</p>
-          <p className="text-xs">@ {employer}</p>
+          <p className="bg-slate-200 rounded animate-pulse"><span className="opacity-0">creator Name</span></p>
+          <p className="bg-slate-200 mt-1 rounded animate-pulse inline-block"><span className="opacity-0">@ employer</span></p>
         </div>
       </div>
     </div>

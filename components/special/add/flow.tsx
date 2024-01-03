@@ -46,7 +46,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
 
   return (
     <>
-      <div className="flex px-4 sm:px-16 mt-8">
+      <div className="flex px-4 sm:px-16 sm:mt-8">
         <div className="hidden sm:block sticky top-20 h-[35rem] w-[20%]">
           {steps.map(( data, index ) => (
             <div className={`transition-all ${step !== data.stepNumber && "text-gray-600"}`} key={index}>
