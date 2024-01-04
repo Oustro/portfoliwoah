@@ -14,7 +14,7 @@ export default function CardSkeleton({ postInfo, name, employer } : { postInfo: 
         width={640}
         height={360}
         draggable={false}
-        className="rounded-lg h-48 sm:h-64 opacity-0 w-full border"
+        className="rounded-lg border opacity-0"
         />
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">

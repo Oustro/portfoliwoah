@@ -44,8 +44,8 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
       className={`${loading && "animate-pulse"} rounded-lg h-48 sm:h-64 w-full border`}
       />
       <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-50 bg-black rounded-lg transition-all" />
-      <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-100 text-white flex justify-center items-center rounded-lg transition-all gap-4 text-3xl">
-        <p className="flex gap-4 items-center"><FaRedo /> Retake Image</p>
+      <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-100 text-white flex justify-center items-center rounded-lg transition-all">
+        <p className="flex gap-2 items-center text-2xl"><FaRedo /> Retake Image</p>
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
         <div>
