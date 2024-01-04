@@ -57,7 +57,7 @@ model VerificationToken {
 
 model UserInfo {
   id            String    @id @default(cuid())
-  name          String?
+  uname          String?
   email         String?   @unique
   employer      String?
   projects      Project[]

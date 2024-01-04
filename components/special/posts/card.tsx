@@ -1,12 +1,12 @@
 import Image from "next/image"
 
-import { projectData } from "@/lib/types"
+import { cardData } from "@/lib/types"
 
 import { HiCursorClick } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa";
 
 
-export default function Card({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
+export default function Card({ postInfo } : { postInfo: cardData }) {
 
   return (
     <a href={postInfo.link} target="_blank">
@@ -32,8 +32,8 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
             </div>
           </div>
           <div className="text-right">
-            <p>{name}</p>
-            <p className="text-xs">{employer}</p>
+            <p>{postInfo.uname}</p>
+            <p className="text-xs">{postInfo.employer}</p>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default function CardSkeleton() {
     <div className="group transition-all rounded-lg">
       <div className="animate-pulse bg-slate-200 rounded-lg">
         <Image
-        src="https://0xfozowwtae3snn2.public.blob.vercel-storage.com/uploaded_on_1704242422961-q6WMmOEsiMOyZ4yMgil9daLIYt3UR3.jpg"
+        src="https://0xfozowwtae3snn2.public.blob.vercel-storage.com/uploaded_on_1704386805888-chfOtT9XsRwaMVFamtbLd5sTjg7jxN.jpg"
         alt="Project Image"
         width={640}
         height={360}

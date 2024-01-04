@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-import CardSkeleton from "@/components/special/profile/cardSkeleton"
+import CardSkeleton from "@/components/shared/cardSkeleton"
 import Card from "@/components/special/profile/card"
 import LinkButton from "@/components/shared/linkButton"
 

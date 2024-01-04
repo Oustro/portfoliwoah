@@ -3,6 +3,8 @@ import { IBM_Plex_Serif } from "next/font/google"
 import BadgeOutline from "@/components/shared/badgeOutline"
 import LinkButton from "@/components/shared/linkButton"
 
+import MainCards from "@/components/special/posts/mainCards"
+
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
     subsets: ['latin'], 
@@ -21,8 +23,8 @@ export default function Home() {
         <div className="mt-4 text-center">
           <LinkButton link="/add">Add your work</LinkButton>
         </div>
-        <div className="mt-20 bg-red-400">
-          hi
+        <div className="mt-20 px-16">
+          <MainCards />
         </div>
       </div>
     </main>
