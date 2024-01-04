@@ -11,7 +11,6 @@ export async function POST(request: NextRequest) {
     await prisma.project.create({
       data: {
         name: postData.name,
-        description: postData.description,
         created: new Date(),
         link: postData.link,
         image: postData.image,

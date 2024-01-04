@@ -66,7 +66,6 @@ model UserInfo {
 model Project {
   id          String    @id @default(cuid())
   name        String?
-  description String?
   created     DateTime
   link        String?   @unique
   clicks      Int       @default(0)

@@ -3,21 +3,23 @@ import Image from "next/image"
 import { projectData } from "@/lib/types"
 
 import { HiCursorClick } from "react-icons/hi";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 export default function Card({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
 
   return (
     <a target="_blank" href={postInfo.link}>
-      <div className="group transition-all rounded-lg">
+      <div className="group">
         <Image
         src={postInfo.image}
         alt="Project Image"
         width={640}
         height={360}
-        className="rounded-lg w-full border"
+        className="rounded-lg h-48 sm:h-64 w-full border"
         />
-        <div className="opacity-0 group-hover:opacity-100 transition-all relative bg-gradient-to-t z-20 from-gray-600 from-7% rounded-b-xl h-24 -mt-24 pt-10 px-4">
-          <p className="text-sm text-white">{postInfo.description || "No description."}</p>
+        <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-50 bg-black rounded-lg transition-all" />
+        <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-100 text-white flex justify-center items-center rounded-lg transition-all">
+          <FaArrowCircleRight className="-rotate-45 text-5xl"/>
         </div>
         <div className="mt-2 px-1 text-sm flex justify-between">
           <div>
@@ -26,7 +28,7 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
           </div>
           <div className="text-right">
             <p>{name}</p>
-            <p className="text-xs">@ {employer}</p>
+            <p className="text-xs">{employer}</p>
           </div>
         </div>
       </div>

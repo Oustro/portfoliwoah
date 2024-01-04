@@ -29,15 +29,6 @@ export default function Info({ setStep, setPostInfo, postInfo, getSS }: { setSte
       onChange={(e) => setPostInfo({ ...postInfo, name: e.target.value })}
       required
       />
-      <div className="text-left text-sm pb-2 mt-8">
-        <label>Short Description (100 characters)</label>
-      </div>
-      <textarea
-      className="w-full px-2 py-2 h-24 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
-      placeholder="This is my portfolio to showcase the work I've done."
-      onChange={(e) => setPostInfo({ ...postInfo, description: e.target.value })}
-      maxLength={100}
-      />
       <button type="submit" className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none">Next</button>
     </form>
   )

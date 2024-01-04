@@ -27,7 +27,7 @@ export default function Work({ name, email, employer, font }: { name: string, em
   return (
     <div>
       {loading ? (
-        <div className="mb-16 grid sm:grid-cols-3 gap-4">
+        <div className="mb-16 grid sm:grid-cols-2 gap-4">
           <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
@@ -43,7 +43,7 @@ export default function Work({ name, email, employer, font }: { name: string, em
               <LinkButton link="/add">Add your work</LinkButton>
             </div>
           ) : ( 
-            <div className="mb-16 grid sm:grid-cols-3 gap-4">
+            <div className="mb-16 grid sm:grid-cols-2 gap-4">
               {work.map((post, index) => (
                 <Card key={index} postInfo={post} name={name} employer={employer} />
               ))}

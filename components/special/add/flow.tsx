@@ -13,7 +13,6 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   const [step, setStep] = useState(1)
   const [postInfo, setPostInfo] = useState<projectData>({
     name: "",
-    description: "",
     link: "",
     image: "",
     userEmail: email,
@@ -22,7 +21,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   const steps = [
     {
       title: "Add Your Work",
-      description: "Upload a link and add relevant information.",
+      description: "Upload the link and name of your work.",
       stepNumber: 1,
     },
     {

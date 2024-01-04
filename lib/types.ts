@@ -6,7 +6,6 @@ export interface redisData {
 
 export interface projectData {
   name: string
-  description: string
   link: string
   image: string
   userEmail: string
