@@ -25,9 +25,9 @@ export default function MainCards() {
   }, [])
 
   return (
-    <div>
+    <div className="mb-16">
       {loading ? (
-        <div className="mb-16 grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
@@ -36,7 +36,7 @@ export default function MainCards() {
           <CardSkeleton />
         </div>
       ) : (
-        <div className="mb-16 grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           {work.map((post, index) => (
             <Card key={index} postInfo={post} />
           ))}

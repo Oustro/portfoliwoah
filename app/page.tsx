@@ -23,7 +23,7 @@ export default function Home() {
         <div className="mt-4 text-center">
           <LinkButton link="/add">Add your work</LinkButton>
         </div>
-        <div className="mt-20 px-16">
+        <div className="mt-20 px-4 sm:px-16">
           <MainCards />
         </div>
       </div>
