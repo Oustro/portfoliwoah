@@ -15,12 +15,10 @@ export default function CardSkeleton() {
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
         <div>
-          <p className="bg-slate-200 rounded animate-pulse"><span className="opacity-0">Project Name</span></p>
-          <p className="bg-slate-200 mt-1 rounded animate-pulse inline-block"><span className="opacity-0">0 click</span></p>
+          <p className="bg-slate-200 rounded animate-pulse"><span className="opacity-0">0 Click Project Name</span></p>
         </div>
         <div className="text-right">
           <p className="bg-slate-200 rounded animate-pulse"><span className="opacity-0">creator Name</span></p>
-          <p className="bg-slate-200 mt-1 rounded animate-pulse inline-block"><span className="opacity-0">@ employer</span></p>
         </div>
       </div>
     </div>
