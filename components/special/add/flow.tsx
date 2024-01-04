@@ -15,6 +15,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
     name: "",
     link: "",
     image: "",
+    clicks: 0,
     userEmail: email,
   })
 

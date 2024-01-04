@@ -8,5 +8,6 @@ export interface projectData {
   name: string
   link: string
   image: string
+  clicks: number
   userEmail: string
 }
