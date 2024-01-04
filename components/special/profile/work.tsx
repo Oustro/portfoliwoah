@@ -11,16 +11,17 @@ export default function Work({ name, email, employer, font }: { name: string, em
   const [work, setWork] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const getWork = async () => {
-      const userWorkReponse = await fetch(`/api/user/work?email=${email}`)
-      const data = await userWorkReponse.json()
+  const getWork = async () => {
+    const userWorkReponse = await fetch(`/api/user/work?email=${email}`)
+    const data = await userWorkReponse.json()
 
-      setWork(data.posts)
-    }
+    setWork(data.posts)
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     getWork()
-    setLoading(false)
 
   }, [email])
 
@@ -28,8 +29,6 @@ export default function Work({ name, email, employer, font }: { name: string, em
     <div>
       {loading ? (
         <div className="mb-16 grid sm:grid-cols-2 gap-4">
-          <CardSkeleton />
-          <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
@@ -45,7 +44,7 @@ export default function Work({ name, email, employer, font }: { name: string, em
           ) : ( 
             <div className="mb-16 grid sm:grid-cols-2 gap-4">
               {work.map((post, index) => (
-                <Card key={index} postInfo={post} name={name} employer={employer} />
+                <Card key={index} postInfo={post} getWork={getWork} />
               ))}
             </div>
           )}

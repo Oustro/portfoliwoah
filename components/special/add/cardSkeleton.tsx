@@ -14,17 +14,19 @@ export default function CardSkeleton({ postInfo, name, employer } : { postInfo: 
         width={640}
         height={360}
         draggable={false}
-        className="rounded-lg border opacity-0"
+        className="rounded-lg h-48 sm:h-64 border opacity-0"
         />
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
         <div>
-          <p>{postInfo.name}</p>
-          <p className="text-xs flex items-center gap-1"><HiCursorClick /> 0</p>
+          <div className="flex gap-1">
+            <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
+            <p>{postInfo.name}</p>
+          </div>
         </div>
         <div className="text-right">
           <p>{name}</p>
-          <p className="text-xs">@ {employer}</p>
+          <p className="text-xs">{employer}</p>
         </div>
       </div>
     </div>
