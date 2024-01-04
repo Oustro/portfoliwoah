@@ -43,6 +43,9 @@ export async function GET(request: NextRequest) {
       token: process.env.BLOB_READ_WRITE_TOKEN
     });
 
+    await page.close()
+    await browser.close()
+
     return NextResponse.json({ "imageUrl": blob.url, "message": "success" }, { status: 200 })
   
   } catch (e) {

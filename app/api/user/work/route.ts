@@ -7,7 +7,12 @@ export async function GET(request: NextRequest) {
 
   try {
 
-    const posts = prisma.project.findMany({
+    const posts = await prisma.project.findMany({
+      orderBy: [
+        {
+          created: 'desc',
+        },
+      ],
       where: {
         userEmail: email
       }

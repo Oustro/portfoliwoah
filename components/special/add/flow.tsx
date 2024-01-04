@@ -13,18 +13,16 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   const [step, setStep] = useState(1)
   const [postInfo, setPostInfo] = useState<projectData>({
     name: "",
-    description: "",
-    created: new Date(),
     link: "",
-    clicks: 0,
     image: "",
+    clicks: 0,
     userEmail: email,
   })
 
   const steps = [
     {
       title: "Add Your Work",
-      description: "Upload a link and add relevant information.",
+      description: "Upload the link and name of your work.",
       stepNumber: 1,
     },
     {
@@ -40,15 +38,15 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   ]
 
   const getScreenShot = async (url: string) => {
-    const res = await fetch(`/api/posts/screenshot?url=${url}`)
-    const data = await res.json()
+    const postScreenshotResponse = await fetch(`/api/posts/screenshot?url=${url}`)
+    const data = await postScreenshotResponse.json()
 
     setPostInfo({ ...postInfo, image: data.imageUrl })
   }
 
   return (
     <>
-      <div className="flex px-4 sm:px-16 mt-8">
+      <div className="flex px-4 sm:px-16 sm:mt-8">
         <div className="hidden sm:block sticky top-20 h-[35rem] w-[20%]">
           {steps.map(( data, index ) => (
             <div className={`transition-all ${step !== data.stepNumber && "text-gray-600"}`} key={index}>
@@ -68,7 +66,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
           ) : step === 2 ? (
             <Preview setStep={setStep} postInfo={postInfo} name={name} employer={employer} />
           ) : (
-            <Confirm />
+            <Confirm font={font} />
           )}
         </div>
       </div>

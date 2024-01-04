@@ -4,18 +4,30 @@ import { useState } from "react"
 
 import { projectData } from "@/lib/types"
 
-import Card from "@/components/shared/card"
-import CardSkeleton from "@/components/shared/cardSkeleton"
+import Card from "@/components/special/add/card"
+import CardSkeleton from "@/components/special/add/cardSkeleton"
 import Spinner from "@/components/shared/spinner"
 
 export default function Preview({ setStep, postInfo, name, employer }: { setStep: Function, postInfo: projectData, name: string, employer: string }) {
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-    console.log("saving post")
-    setStep(3)
+    
+    const postCreateResponse = await fetch('/api/posts/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    })
+
+    if (postCreateResponse.ok) {
+      return setStep(3)
+    }
+
+    setLoading(false)
   }
 
   return (
@@ -29,7 +41,7 @@ export default function Preview({ setStep, postInfo, name, employer }: { setStep
         {!postInfo.image || loading ? (
           <div className="flex items-center gap-2 justify-center">
             <Spinner color="slate-800"/>
-            <span>Generating Image...</span>
+            <span>Loading...</span>
           </div>
         ) : 
           "Post Work"
