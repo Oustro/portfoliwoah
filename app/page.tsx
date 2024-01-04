@@ -21,6 +21,9 @@ export default function Home() {
         <div className="mt-4 text-center">
           <LinkButton link="/add">Add your work</LinkButton>
         </div>
+        <div className="mt-20 bg-red-400">
+          hi
+        </div>
       </div>
     </main>
   )
