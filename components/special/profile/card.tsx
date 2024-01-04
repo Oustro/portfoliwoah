@@ -71,7 +71,7 @@ export default function Card({ postInfo, getWork } : { postInfo: projectData, ge
         </div>
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
-        <div className="flex gap-1">
+        <div className="flex gap-1 items-center">
           <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
           <p>{postInfo.name}</p>
         </div>
