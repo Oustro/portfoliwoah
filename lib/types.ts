@@ -11,3 +11,12 @@ export interface projectData {
   clicks: number
   userEmail: string
 }
+
+export interface cardData {
+  name: string
+  link: string
+  clicks: number
+  image: string
+  uname: string
+  employer: string
+}

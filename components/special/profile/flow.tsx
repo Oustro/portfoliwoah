@@ -18,7 +18,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
       items: [
         {
           title: "My Work",
-          content: <Work name={name} email={email} employer={employer} font={font} />
+          content: <Work email={email} font={font} />
         }
       ]
     },

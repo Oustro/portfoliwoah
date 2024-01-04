@@ -1,16 +1,28 @@
 import Image from "next/image"
 
-import { projectData } from "@/lib/types"
+import { cardData } from "@/lib/types"
 
 import { HiCursorClick } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa";
 
+export default function Card({ postInfo, email } : { postInfo: cardData, email: string }) {
 
-export default function Card({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
+  const addClick = async () => {
+    await fetch('/api/posts/click', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        link: postInfo.link,
+        email: email ?? "none"
+      })
+    })
+  }
 
   return (
     <a href={postInfo.link} target="_blank">
-      <div>
+      <div onClick={addClick}>
         <div className="relative group w-full">
           <Image
           src={postInfo.image}
@@ -27,13 +39,13 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
         <div className="mt-2 px-1 text-sm flex justify-between">
           <div>
             <div className="flex gap-1 items-center">
-              <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> 1</p>
+              <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
               <p>{postInfo.name}</p>
             </div>
           </div>
           <div className="text-right">
-            <p>{name}</p>
-            <p className="text-xs">{employer}</p>
+            <p>{postInfo.uname}</p>
+            <p className="text-xs">{postInfo.employer}</p>
           </div>
         </div>
       </div>

@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react"
 
-import CardSkeleton from "@/components/special/profile/cardSkeleton"
+import CardSkeleton from "@/components/shared/cardSkeleton"
 import Card from "@/components/special/profile/card"
 import LinkButton from "@/components/shared/linkButton"
 
-export default function Work({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
+export default function Work({ email, font }: { email: string, font: string }) {
 
   const [work, setWork] = useState([])
   const [loading, setLoading] = useState(true)

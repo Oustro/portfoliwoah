@@ -56,22 +56,21 @@ export default function Card({ postInfo, getWork } : { postInfo: projectData, ge
 
   return (
     <div>
-      <div className="group cursor-pointer">
+      <div onClick={retakeScreenshot} className="relative group w-full">
         <Image
-        onClick={retakeScreenshot}
         src={postInfo.image}
-        alt="Project Image"
+        alt={`${postInfo.name} screenshot`}
         width={640}
         height={360}
-        className={`${loading && "animate-pulse"} rounded-lg h-48 sm:h-64 w-full border`}
+        className={`${loading && "animate-pulse"} rounded-lg w-full border`}
         />
-        <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-25 bg-black rounded-lg transition-all" />
-        <div className="relative z-20 -mt-48 sm:-mt-64 h-48 sm:h-64 opacity-0 group-hover:opacity-100 text-white flex justify-center items-center rounded-lg transition-all">
-          <p className="flex gap-2 items-center text-lg border p-2 border-white rounded-xl transition-all"><FaRedo /> Retake Image</p>
+        <div className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-25 bg-black rounded-lg transition-all" />
+        <div className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 text-white flex justify-center items-center rounded-lg transition-all">
+          <p className="flex gap-2 items-center text-lg border p-2 border-white rounded-xl transition-all"><FaRedo className={loading && "animate-spin"} /> {loading ? "Taking" : "Retake"} Image</p>
         </div>
       </div>
       <div className="mt-2 px-1 text-sm flex justify-between">
-        <div className="flex gap-1">
+        <div className="flex gap-1 items-center">
           <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
           <p>{postInfo.name}</p>
         </div>

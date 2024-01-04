@@ -35,7 +35,7 @@ export const authOptions = {
       })
 
       return {
-        name: sessionUser?.name || null,
+        name: sessionUser?.uname || null,
         email: session?.user?.email || null,
         employer: sessionUser?.employer || null,
         ...session
@@ -54,7 +54,7 @@ export const authOptions = {
 
       await prisma.userInfo.create({
         data: {
-          name: newUserInfo.name,
+          uname: newUserInfo.name,
           email: newUserInfo.email,
           employer: newUserInfo.employer,
         }

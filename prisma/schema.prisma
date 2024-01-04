@@ -57,7 +57,7 @@ model VerificationToken {
 
 model UserInfo {
   id            String    @id @default(cuid())
-  name          String?
+  uname          String?
   email         String?   @unique
   employer      String?
   projects      Project[]
@@ -68,7 +68,7 @@ model Project {
   name        String?
   created     DateTime
   link        String?   @unique
-  clicks      Int       @default(0)
+  clicks      Int       @default(1)
   image       String?
   userEmail   String?
   userInfo    UserInfo? @relation(fields: [userEmail], references: [email])
