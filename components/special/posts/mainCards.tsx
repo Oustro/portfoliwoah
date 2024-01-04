@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import CardSkeleton from "@/components/shared/cardSkeleton"
 import Card from "./card"
 
-export default function MainCards() {
+export default function MainCards({ email } : { email: string }) {
 
   const [work, setWork] = useState([])
   const [employer, setEmployer] = useState('Google')
@@ -38,7 +38,7 @@ export default function MainCards() {
       ) : (
         <div className="grid sm:grid-cols-3 gap-4">
           {work.map((post, index) => (
-            <Card key={index} postInfo={post} />
+            <Card key={index} postInfo={post} email={email} />
           ))}
         </div>
       )}

@@ -5,6 +5,9 @@ import LinkButton from "@/components/shared/linkButton"
 
 import MainCards from "@/components/special/posts/mainCards"
 
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/utils/auth"
+
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
     subsets: ['latin'], 
@@ -13,7 +16,9 @@ const ibm_plex_serif = IBM_Plex_Serif(
   }
 )
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions)
+
   return (
     <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4">
       <div className="mt-20 text-center">
@@ -24,7 +29,7 @@ export default function Home() {
           <LinkButton link="/add">Add your work</LinkButton>
         </div>
         <div className="mt-20 px-4 sm:px-16">
-          <MainCards />
+          <MainCards email={session?.email ?? ""} />
         </div>
       </div>
     </main>

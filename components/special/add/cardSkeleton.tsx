@@ -9,7 +9,7 @@ export default function CardSkeleton({ postInfo, name, employer } : { postInfo: 
     <div className="group transition-all rounded-lg">
       <div className="animate-pulse bg-slate-200 rounded-lg">
         <Image
-        src="https://0xfozowwtae3snn2.public.blob.vercel-storage.com/uploaded_on_1704386805888-chfOtT9XsRwaMVFamtbLd5sTjg7jxN.jpg"
+        src="/hello.png"
         alt="Project Image"
         width={640}
         height={360}

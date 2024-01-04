@@ -5,12 +5,24 @@ import { cardData } from "@/lib/types"
 import { HiCursorClick } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa";
 
+export default function Card({ postInfo, email } : { postInfo: cardData, email: string }) {
 
-export default function Card({ postInfo } : { postInfo: cardData }) {
+  const addClick = async () => {
+    await fetch('/api/posts/click', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        link: postInfo.link,
+        email: email ?? "none"
+      })
+    })
+  }
 
   return (
     <a href={postInfo.link} target="_blank">
-      <div>
+      <div onClick={addClick}>
         <div className="relative group w-full">
           <Image
           src={postInfo.image}
