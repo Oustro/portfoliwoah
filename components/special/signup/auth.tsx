@@ -60,6 +60,7 @@ export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo }: {
         <label><span className="text-red-600">*</span> Email</label>
       </div>
       <input
+      type="email"
       disabled={loading}
       className="w-full pl-2 py-4 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
       placeholder="andy@example.com"
