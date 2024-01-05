@@ -28,11 +28,11 @@ export default function MenuDrawer({ menuItems, font, setView } : { menuItems: a
                 <div className={index !== 0 ? 'mt-8' : ''} key={index}>
                   <p className={`${font} text-xl`}>{data.overallTitle}</p>
                   {data.items.map(( data: any, indexSecond:number ) => (
-                    <div>
+                    <div key={indexSecond}>
                       <Drawer.Close className="text-sm mt-4" onClick={() => setView({
                         index: index,
                         content: indexSecond
-                      })} key={indexSecond}>{data.title}</Drawer.Close>
+                      })}>{data.title}</Drawer.Close>
                     </div>
                   ))}
                 </div>
