@@ -26,7 +26,7 @@ export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Func
     }
 
     const signInResponse = await signIn('email', { 
-      email: userInfo.email, 
+      email: userInfo.email.trim(), 
       callbackUrl: `${window.location.origin}`,
       redirect: false
     })

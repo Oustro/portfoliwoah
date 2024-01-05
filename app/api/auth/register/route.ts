@@ -12,9 +12,9 @@ export async function POST(request: NextRequest) {
     })
     
     await redis.set(email, {
-      name: name,
-      employer: employer,
-      email: email
+      name: name.trim(),
+      employer: employer.trim(),
+      email: email.trim()
     },
     {
       ex: 60 * 60 * 24,
