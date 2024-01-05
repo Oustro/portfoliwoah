@@ -1,9 +1,26 @@
 import { projectData } from "@/lib/types"
 
-export default function Info({ setStep, setPostInfo, postInfo, getSS }: { setStep: Function, setPostInfo: Function, postInfo: projectData, getSS: Function }) {
+export default function Info({ setStep, setPostInfo, postInfo, getSS, setErrorInfo }: { setStep: Function, setPostInfo: Function, postInfo: projectData, getSS: Function, setErrorInfo: Function }) {
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
+    setErrorInfo("")
+
+    const postLinkResponse = await fetch('/api/posts/link', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        link: postInfo.link.trim()
+      })
+    })
+
+    if (!postLinkResponse.ok) {
+      return setErrorInfo("This link is already associated with a project.")
+    }
+
     setStep(2)
     await getSS(postInfo.link)
   }

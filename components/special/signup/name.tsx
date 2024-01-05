@@ -1,7 +1,24 @@
-export default function Name({ setStep, setUserInfo, userInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }}) {
+export default function Name({ setStep, setUserInfo, userInfo, setErrorInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }, setErrorInfo: Function }) {
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    setErrorInfo("")
+
+    const authUnameResponse = await fetch('/api/auth/uname', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        uname: userInfo.name.trim() 
+      })
+    })
+
+    if (!authUnameResponse.ok) {
+      return setErrorInfo("This display name is already taken.")
+    }
+
     setStep(2)
   }
 

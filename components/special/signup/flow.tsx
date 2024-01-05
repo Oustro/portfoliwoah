@@ -13,6 +13,7 @@ import Error from "@/components/shared/error"
 export default function Flow({ font }: { font: string }) {
   
   const [step, setStep] = useState(1)
+  const [errorInfo, setErrorInfo] = useState("")
   const [userInfo, setUserInfo] = useState({
     name: "",
     employer: "",
@@ -22,17 +23,18 @@ export default function Flow({ font }: { font: string }) {
   return (
     <>
       {step === 1 ? (
-        <Name setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
+        <Name setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} setErrorInfo={setErrorInfo} />
       ) : step === 2 ? (
         <Work setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
       ) : step === 3 ? (
-        <Auth setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} />
+        <Auth setStep={setStep} setUserInfo={setUserInfo} userInfo={userInfo} setErrorInfo={setErrorInfo} />
       ) : step === 4 ? (
         <Confirm font={font} email={userInfo.email} />
       ) : (
         <Error setStep={setStep} />
       )}
 
+      <p className="text-red-400">{errorInfo}</p>
 
       {step <= 3 && (
         <>

@@ -11,6 +11,7 @@ import { projectData } from "@/lib/types"
 export default function Flow({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
 
   const [step, setStep] = useState(1)
+  const [errorInfo, setErrorInfo] = useState("")
   const [postInfo, setPostInfo] = useState<projectData>({
     name: "",
     link: "",
@@ -38,8 +39,13 @@ export default function Flow({ name, email, employer, font }: { name: string, em
   ]
 
   const getScreenShot = async (url: string) => {
-    const postScreenshotResponse = await fetch(`/api/posts/screenshot?url=${url}`)
+    const postScreenshotResponse = await fetch(`/api/posts/screenshot?url=${url.trim()}`)
     const data = await postScreenshotResponse.json()
+
+    if (!postScreenshotResponse.ok) {
+      setStep(1)
+      return setErrorInfo("This link is invalid.")
+    }
 
     setPostInfo({ ...postInfo, image: data.imageUrl })
   }
@@ -62,12 +68,14 @@ export default function Flow({ name, email, employer, font }: { name: string, em
         </div>
         <div className="w-full sm:w-[80%]">
           {step === 1 ? (
-            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} />
+            <Info setStep={setStep} setPostInfo={setPostInfo} postInfo={postInfo} getSS={getScreenShot} setErrorInfo={setErrorInfo} />
           ) : step === 2 ? (
             <Preview setStep={setStep} postInfo={postInfo} name={name} employer={employer} />
           ) : (
             <Confirm font={font} />
           )}
+
+          <p className="text-center text-red-400">{errorInfo}</p>
         </div>
       </div>
     </>
