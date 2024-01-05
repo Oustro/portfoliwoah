@@ -6,6 +6,7 @@ import GoogleProvider from "next-auth/providers/google"
 import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import prisma from "@/utils/db"
+import { customSendVerificationRequest } from "@/utils/custom"
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
@@ -23,7 +24,10 @@ export const authOptions = {
           pass: process.env.NEXT_PUBLIC_MAIL_SERVER_PASSWORD
         }
       },
-      from: process.env.NEXT_PUBLIC_EMAIL_FROM
+      from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+      sendVerificationRequest({ identifier, url, provider }) {
+        customSendVerificationRequest({ identifier, url, provider })
+      },
     })
   ],
   callbacks: {
