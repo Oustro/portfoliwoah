@@ -37,7 +37,7 @@ export default function Update({ email, employer }: { email: string, employer: s
   return (
     <form onSubmit={(e) => updateEmployer(e)}>
       <div className="bg-slate-200 pt-4 pb-6 px-4 rounded-t-xl">
-        <p className="text-lg sm:text-xl mb-4 font-bold">Where are you working now?</p>
+        <p className="text-lg sm:text-xl mb-4">Where are you working now?</p>
         <input
         className="w-full sm:w-[50%] pl-2 py-4 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
         placeholder={newEmployer}

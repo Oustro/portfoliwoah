@@ -5,6 +5,7 @@ import { useState } from "react"
 import Info from "@/components/special/profile/info"
 import Work from "@/components/special/profile/work"
 import Update from "@/components/special/profile/update"
+import MenuDrawer from "./menuDrawer"
 
 export default function Flow({ name, email, employer, font }: { name: string, email: string, employer: string, font: string }) {
   const [view, setView] = useState({
@@ -39,7 +40,7 @@ export default function Flow({ name, email, employer, font }: { name: string, em
 
   return (
     <>
-      <div className="flex px-4 sm:px-16 sm:mt-8">
+      <div className="sm:flex px-4 sm:px-16 sm:mt-8">
         <div className="hidden sm:block sticky top-20 h-96 w-[20%]">
           {menu.map(( data, index ) => (
             <div className={index !== 0 ? 'mt-8' : ''} key={index}>
@@ -53,6 +54,13 @@ export default function Flow({ name, email, employer, font }: { name: string, em
             </div>
           ))}
         </div>
+
+        <div className="">
+          <div className="block sm:hidden">
+            <MenuDrawer menuItems={menu} font={font} setView={setView}/>
+          </div>
+        </div>
+
         <div className="w-full sm:w-[80%]">
           {menu[view.index].items[view.content].content}
         </div>
