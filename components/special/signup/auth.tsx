@@ -5,13 +5,29 @@ import { signIn } from "next-auth/react";
 
 import Spinner from "@/components/shared/spinner";
 
-export default function Auth({ setStep, setUserInfo, userInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }}) {
+export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }, setErrorInfo: Function }) {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     setLoading(true)
+    setErrorInfo("")
+
+    const authEmailResponse = await fetch('/api/auth/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        email: userInfo.email.trim() 
+      })
+    })
+
+    if (!authEmailResponse.ok) {
+      setErrorInfo("This email is already registered.")
+      return setLoading(false)
+    }
 
     const authRegisterResponse = await fetch('/api/auth/register', {
       method: 'POST',

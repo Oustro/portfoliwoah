@@ -3,6 +3,8 @@ export default function Name({ setStep, setUserInfo, userInfo, setErrorInfo }: {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    setErrorInfo("")
+
     const authUnameResponse = await fetch('/api/auth/uname', {
       method: 'POST',
       headers: {
@@ -14,7 +16,7 @@ export default function Name({ setStep, setUserInfo, userInfo, setErrorInfo }: {
     })
 
     if (!authUnameResponse.ok) {
-      return setErrorInfo("This display is already taken.")
+      return setErrorInfo("This display name is already taken.")
     }
 
     setStep(2)

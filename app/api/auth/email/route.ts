@@ -3,21 +3,21 @@ import prisma from '@/utils/db'
 
 export async function POST(request: NextRequest) {
 
-  const { uname } = await request.json()
+  const { email } = await request.json()
 
   try {
 
-    const validUname = await prisma.userInfo.findFirst({
+    const validEmail = await prisma.userInfo.findFirst({
       where: {
-        uname: {
-          equals: uname || "",
+        email: {
+          equals: email || "",
           mode: 'insensitive'
         }
       }
 
     })
 
-    if (validUname) {
+    if (validEmail) {
       return NextResponse.json({ "message": "error" }, { status: 403 })
     }
 
