@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
           mode: 'insensitive'
         }
       }
-
     })
 
     if (validEmail) {

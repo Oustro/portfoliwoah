@@ -35,12 +35,12 @@ export default async function Nav() {
     },
     {
       title: "Changelog",
-      link: "https://github.com/Oustro/portfoliwoah/issues",
+      link: "https://github.com/Oustro/portfoliwoah/releases",
       icon: <MdCode />
     },
     {
       title: "Feedback",
-      link: "https://useziggy.com",
+      link: "https://portfoliwoah.useziggy.com/t/z-8onhnx3xpz8o-mm-o",
       icon: <MdOutlineFeedback />
     }
   ]

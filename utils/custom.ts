@@ -73,7 +73,7 @@ function html(params: { url: string }) {
         <div class="container">
           <img src="https://www.portfoliwoah.io/userIcon.png" alt="User Icon" class="user-icon">
           <h2>Hello again,</h2>
-          <p><a href="${url}" class="button">Click here to log in with this magic link</a></p>
+          <p><a href="${url}" class="button">Click here to log in</a></p>
           <p>Or, copy and paste this temporary login code:</p>
           <a href="${url}">${url}</a>
           <p class="footer">If you didn't try to login, you can safely ignore this email.</p>
