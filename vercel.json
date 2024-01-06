@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/posts/screenshot/*.ts": {
+      "maxDuration": 60
+    }
+  }
+}
