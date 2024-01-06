@@ -12,7 +12,9 @@ export default function MainCards({ email } : { email: string }) {
 
   useEffect(() => {
     const getWork = async () => {
-      const userWorkReponse = await fetch(`/api/posts/ranked`)
+      const userWorkReponse = await fetch("/api/posts/ranked", { 
+        cache: 'no-store' 
+      })
       const data = await userWorkReponse.json()
   
       setWork(data.posts)
