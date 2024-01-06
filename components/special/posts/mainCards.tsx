@@ -11,7 +11,7 @@ export default function MainCards({ email } : { email: string }) {
   const [loading, setLoading] = useState(true)
 
   const getWork = async () => {
-    const userWorkReponse = await fetch("/api/posts/ranked")
+    const userWorkReponse = await fetch(`/api/posts/ranked?employer=${''}`)
     const data = await userWorkReponse.json()
 
     setWork(data.posts)
