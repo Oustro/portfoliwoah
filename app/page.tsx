@@ -26,7 +26,7 @@ export default async function Home() {
         <h1 className='mt-8 text-4xl sm:text-5xl'>For the Love of <span className={ibm_plex_serif.className}>Design</span>.</h1>
         <p className="mt-8 text-xs sm:text-base">Share what your proud of and connect with others who love design.</p>
         <div className="mt-4 text-center">
-          <LinkButton link="/add">Add your work</LinkButton>
+          <LinkButton link={session ? "/add" : "/register/login"}>Add your work</LinkButton>
         </div>
         <div className="mt-20 px-4 sm:px-16">
           <MainCards email={session?.email ?? ""} />
