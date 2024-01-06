@@ -10,17 +10,15 @@ export default function MainCards({ email } : { email: string }) {
   const [work, setWork] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const getWork = async () => {
-      const userWorkReponse = await fetch("/api/posts/ranked", { 
-        cache: 'no-store' 
-      })
-      const data = await userWorkReponse.json()
-  
-      setWork(data.posts)
-      setLoading(false)
-    }
+  const getWork = async () => {
+    const userWorkReponse = await fetch("/api/posts/ranked")
+    const data = await userWorkReponse.json()
 
+    setWork(data.posts)
+    setLoading(false)
+  }
+
+  useEffect(() => {
     getWork()
 
   }, [])
