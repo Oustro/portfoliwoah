@@ -21,46 +21,68 @@ function html(params: { url: string }) {
   const { url } = params
 
   return `
-    <!DOCTYPE html>
-    <html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <meta name="x-apple-disable-message-reformatting">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .sora {
-        font-family: 'Sora', sans-serif;
-      }
-      .ibm-plex-serif {
-        font-family: 'IBM Plex Serif', serif;
-        font-weight: 300;
-        font-style: italic;
-      }
-    </style>
+      <meta charset="UTF-8">
+      <meta name="x-apple-disable-message-reformatting">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+      <style>
+        .sora {
+          font-family: 'Sora', sans-serif;
+          font-weight: 400;
+        }
+        .ibm-plex-serif {
+          font-family: 'IBM Plex Serif', serif;
+          font-weight: 300;
+          font-style: italic;
+        }
+        .mainClass {
+          overflow: hidden; 
+          position: relative; 
+          padding-left: 1rem;
+          padding-right: 1rem; 
+          justify-content: center; 
+          min-height: 100vh; 
+        }
+        .buttonClass {
+          display: inline-block; 
+          padding: 0.75rem; 
+          border-radius: 0.5rem; 
+          font-size: 0.875rem;
+          line-height: 1.25rem; 
+          transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 300ms; 
+          cursor: pointer; 
+          background-color: rgb(226 232 240);
+        }
+        .buttonClass:hover {
+          background-color: rgb(203 213 225);
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      </style>
     </head>
     <body class="sora">
-    <main class="relative min-h-screen justify-center overflow-hidden transition-all px-4">
-      <div class="mt-20 text-center">
-          <div class="px-2 text-sm py-1 rounded-lg inline-block border-2 border-slate-200">
-              Welcome to the newly launched Portfoliwoah 🎉
-            </div>
-            <h1 class='mt-8 text-4xl sora'>For the Love of <span class="ibm-plex-serif">Design</span>.</h1>
-            <p class="mt-8 text-base">Share what your proud of and connect with others who love design.</p>
-            <div class="mt-4 text-center">
-            <a href="${url}">
-              <div class="text-sm p-3 inline-block rounded-lg bg-slate-200 hover:bg-slate-300 transition cursor-pointer">Use Magic Link</div></a>
-            </div>
-            <p class="text-center mt-12 text-sm">Button not working? Use this link.</p>
-            <p class="text-center mt-4 text-sm">${url}</p>
-            
+      <main class="mainClass">
+        <div>
+          <h1>We know, this email is ugly.</h1>
+          <p>Maybe you should do something about it. https://github.com/Oustro/portfoliwoah</p>
+          <div class="buttonClass">
+            <span><a href="${url}">Use Magic Link</a></span>
           </div>
-        </main>
+          <p class="text-center mt-12 text-sm">Button not working? Use this link.</p>
+          <p class="text-center mt-4 text-sm">${url}</p>
+        </div>
+      </main>
     </body>
-    </html>
+  </html>
   `
 }
 
