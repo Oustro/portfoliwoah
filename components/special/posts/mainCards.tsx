@@ -8,12 +8,11 @@ import Card from "./card"
 export default function MainCards({ email } : { email: string }) {
 
   const [work, setWork] = useState([])
-  const [employer, setEmployer] = useState('Google')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getWork = async () => {
-      const userWorkReponse = await fetch(`/api/posts/ranked?employer=${employer}`)
+      const userWorkReponse = await fetch(`/api/posts/ranked`)
       const data = await userWorkReponse.json()
   
       setWork(data.posts)

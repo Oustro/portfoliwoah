@@ -33,9 +33,7 @@ export default function Flow({ font }: { font: string }) {
       ) : (
         <Error setStep={setStep} />
       )}
-
       <p className="text-red-400">{errorInfo}</p>
-
       {step <= 3 && (
         <>
           <p className="mt-4 text-sm">By continuing, you agree to the <span className="underline transition hover:text-gray-600"><Link href="/legal">Terms of Service and Privacy Policy.</Link></span></p>
