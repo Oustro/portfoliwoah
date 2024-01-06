@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/posts/**/*.ts": {
+      "maxDuration": 300
+    }
+  }
+}
