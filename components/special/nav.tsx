@@ -40,7 +40,7 @@ export default async function Nav() {
     },
     {
       title: "Feedback",
-      link: "https://useziggy.com",
+      link: "https://portfoliwoah.useziggy.com/t/z-8onhnx3xpz8o-mm-o",
       icon: <MdOutlineFeedback />
     }
   ]
