@@ -1,7 +1,7 @@
 {
   "functions": {
     "app/api/posts/**/*.ts": {
-      "maxDuration": 300
+      "maxDuration": 60
     }
   }
 }
