@@ -20,6 +20,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: release-v.0.0.${{ github.run_number }}
-        release_name: v.0.0.${{ github.run_number }}
+        release_name: v.0.1.${{ github.run_number }}
         draft: false
         prerelease: false
