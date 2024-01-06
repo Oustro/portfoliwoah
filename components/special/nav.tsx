@@ -35,7 +35,7 @@ export default async function Nav() {
     },
     {
       title: "Changelog",
-      link: "https://github.com/Oustro/portfoliwoah/issues",
+      link: "https://github.com/Oustro/portfoliwoah/releases",
       icon: <MdCode />
     },
     {
