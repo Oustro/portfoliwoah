@@ -22,7 +22,23 @@ export const metadata: Metadata = {
         href: '/favicon-dark.ico',
       },
     ],
-  }
+  },
+  openGraph: {
+    title: 'Portfoliwoah',
+    description: 'Share what your proud of, and connect with others who love design.',
+    images: [
+      {
+        url: "/og-thumbnail.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: 'Portfoliwoah',
+    description: 'Share what your proud of, and connect with others who love design.',
+    images: "/twitter-thumbnail.png",
+    creator: "@oustrohq",
+  },
 }
 
 const sora = Sora(
