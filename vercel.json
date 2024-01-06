@@ -1,6 +1,6 @@
 {
   "functions": {
-    "app/api/posts/**/*.ts": {
+    "app/api/posts/screenshot/*.ts": {
       "maxDuration": 60
     }
   }
