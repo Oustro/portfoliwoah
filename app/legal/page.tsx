@@ -1,4 +1,5 @@
 import { IBM_Plex_Serif } from "next/font/google"
+import Link from "next/link"
 
 const ibm_plex_serif = IBM_Plex_Serif(
   { 
@@ -186,9 +187,9 @@ export default async function Legal() {
     <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4 mb-16">
       <div className="mt-20 text-center">
         <h1 className={`${ibm_plex_serif.className} mt-8 text-4xl sm:text-5xl`}>Legal</h1>
-        <p className="mt-8 text-xs sm:text-base">Here's our policies you agree to in order to use Portfoliwoah.</p>
+        <p className="mt-8 text-xs sm:text-base">Here's our <span className="underline"><Link href="#privacy">Privacy Policy</Link></span> and <span className="underline"><Link href="#tos">Terms of Service</Link></span> you agree to in order to use Portfoliwoah.</p>
       </div>
-      <div className="px-4 sm:px-16 mt-20">
+      <div id="privacy" className="px-4 sm:px-16 mt-20">
         <h3 className="text-xs"><span className={`${ibm_plex_serif.className} text-3xl`}>Privacy Policy</span> (Effective date: January 6th, 2024)</h3>
         {privacy.map((section, index) => (
           <div key={index} className="mt-8">
@@ -202,7 +203,7 @@ export default async function Legal() {
           </div>
         ))}
       </div>
-      <div className="px-4 sm:px-16 mt-20">
+      <div id="tos" className="px-4 sm:px-16 mt-20">
         <h3 className="text-xs"><span className={`${ibm_plex_serif.className} text-3xl`}>Terms of Service</span> (Effective date: January 6th, 2024)</h3>
         {terms.map((section, index) => (
           <div key={index} className="mt-8">
