@@ -21,68 +21,65 @@ function html(params: { url: string }) {
   const { url } = params
 
   return `
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="x-apple-disable-message-reformatting">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-      <style>
-        .sora {
-          font-family: 'Sora', sans-serif;
-          font-weight: 400;
-        }
-        .ibm-plex-serif {
-          font-family: 'IBM Plex Serif', serif;
-          font-weight: 300;
-          font-style: italic;
-        }
-        .mainClass {
-          overflow: hidden; 
-          position: relative; 
-          padding-left: 1rem;
-          padding-right: 1rem; 
-          justify-content: center; 
-          min-height: 100vh; 
-        }
-        .buttonClass {
-          display: inline-block; 
-          padding: 0.75rem; 
-          border-radius: 0.5rem; 
-          font-size: 0.875rem;
-          line-height: 1.25rem; 
-          transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-duration: 300ms; 
-          cursor: pointer; 
-          background-color: rgb(226 232 240);
-        }
-        .buttonClass:hover {
-          background-color: rgb(203 213 225);
-        }
-        a {
-          color: black;
-          text-decoration: none;
-        }
-      </style>
-    </head>
-    <body class="sora">
-      <main class="mainClass">
-        <div>
-          <h1>We know, this email is ugly.</h1>
-          <p>Maybe you should do something about it. https://github.com/Oustro/portfoliwoah</p>
-          <div class="buttonClass">
-            <span><a href="${url}">Use Magic Link</a></span>
-          </div>
-          <p class="text-center mt-12 text-sm">Button not working? Use this link.</p>
-          <p class="text-center mt-4 text-sm">${url}</p>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="x-apple-disable-message-reformatting">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+          }
+          h2, p {
+            color: black !important;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+          }
+          .button {
+            background-color: #e2e8f0;
+            color: black !important;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+          }
+          .footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+          }
+          .user-icon {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <img src="https://www.portfoliwoah.io/userIcon.png" alt="User Icon" class="user-icon">
+          <h2>Hello again,</h2>
+          <p><a href="${url}" class="button">Click here to log in with this magic link</a></p>
+          <p>Or, copy and paste this temporary login code:</p>
+          <a href="${url}">${url}</a>
+          <p class="footer">If you didn't try to login, you can safely ignore this email.</p>
         </div>
-      </main>
-    </body>
-  </html>
+      </body>
+    </html>
   `
 }
 
