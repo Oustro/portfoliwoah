@@ -12,7 +12,7 @@ export default function Work({ setStep, setUserInfo, userInfo }: { setStep: Func
       </div>
       <input
       className="w-full pl-2 py-4 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
-      placeholder="Airbnb, Google, etc."
+      placeholder="Airbnb, Google, Unemployed, etc."
       onChange={(e) => setUserInfo({ ...userInfo, employer: e.target.value })}
       />
       <button type="submit" className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none">Next</button>
