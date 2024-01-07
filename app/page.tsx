@@ -29,7 +29,7 @@ export default async function Home() {
           <LinkButton link={session ? "/add" : "/register/login"}>Add your work</LinkButton>
         </div>
         <div className="mt-20 px-4 sm:px-16">
-          <MainCards email={session?.email ?? ""} />
+          <MainCards email={session?.email ?? ""} font={ibm_plex_serif.className} />
         </div>
       </div>
     </main>
