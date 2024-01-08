@@ -16,6 +16,7 @@ Here is what is used to build Portfoliwoah.
 - Tailwind CSS
 - Vercel
 - Postgres via Supabase
+- Prisma
 - NextAuth
 - Puppeteer
 - Vercel Blob
