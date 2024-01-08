@@ -1,5 +1,5 @@
 ## Introduction
-Portfoliwoah is a platform for sharing and showcasing online web application work and portfolios. Developed by Oustro, it offers a unique space for professionals to display their projects and collaborate with others.
+Portfoliwoah is an open-source platform designed to facilitate the sharing and discovery of personal work by designers and developers across various companies. 
 
 ## Tech Stack
 Here is what is used to build Portfoliwoah.
