@@ -16,6 +16,7 @@
     "@sparticuz/chromium-min": "^119.0.2",
     "@types/nodemailer": "^6.4.14",
     "@upstash/redis": "^1.27.1",
+    "@vercel/analytics": "^1.1.1",
     "@vercel/blob": "^0.16.1",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
