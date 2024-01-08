@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://oustro.xyz">
+    <img src="https://www.jacobt.io/_next/image?url=%2Fportfoliwoah-logo.png&w=96&q=75" height="100">
+  </a>
+</p>
+
 ## Introduction
 Portfoliwoah is an open-source platform designed to facilitate the sharing and discovery of personal work by designers and developers across various companies. 
 
