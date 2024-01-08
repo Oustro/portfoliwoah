@@ -5,6 +5,8 @@ import Nav from "@/components/special/nav"
 
 import { Sora } from 'next/font/google'
 
+import { Analytics } from '@vercel/analytics/react';
+
 export const metadata: Metadata = {
   title: 'Portfoliwoah',
   description: 'Share what your proud of, and connect with others who love design.',
@@ -55,6 +57,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <main className={sora.className}>
           <Nav />
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
