@@ -29,5 +29,3 @@ We encourage contributing to Portfoliwoah! If you encounter a bug or think of a 
 
 ### Thanks to these folks for contributing!
 <img src="https://contrib.rocks/image?repo=oustro/portfoliwoah" />
-
-hi
