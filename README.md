@@ -5,6 +5,7 @@ Portfoliwoah is an open-source platform designed to facilitate the sharing and d
 Here is what is used to build Portfoliwoah.
 
 - Next
+- TypeScript
 - Redis via Upstash
 - Tailwind CSS
 - Vercel
