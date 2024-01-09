@@ -21,6 +21,9 @@ Here is what is used to build Portfoliwoah.
 - Puppeteer
 - Vercel Blob
 
+## Self Hosting
+Feel free to self host Portfoliwoah for your own organization. Please reach out to support@oustro.xyz in order to get instructions while documentation is being written.
+
 ## Contributing
 We encourage contributing to Portfoliwoah! If you encounter a bug or think of a feature feel free to do the following:
 
