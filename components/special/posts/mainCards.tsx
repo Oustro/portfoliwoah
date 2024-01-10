@@ -39,7 +39,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
         </div>
         <input
         className="block pl-10 w-full py-4 mb-8 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
-        placeholder="Airbnb, Google, Vercel, etc."
+        placeholder="Airbnb, Google, Unemployed, etc."
         onChange={(e) => setEmployer(e.target.value)}
         />
       </div>
