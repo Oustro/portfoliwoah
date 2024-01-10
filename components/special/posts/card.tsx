@@ -36,7 +36,7 @@ export default function Card({ postInfo, email } : { postInfo: cardData, email: 
             <p className="text-5xl -rotate-45 transition-all"><FaArrowRight /></p>
           </div>
         </div>
-        <div className="mt-2 px-1 text-sm flex justify-between">
+        <div className="mt-2 px-1 text-left text-sm flex justify-between">
           <div>
             <div className="flex gap-1 items-center">
               <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
