@@ -28,7 +28,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
   return (
     <div className="mb-16">
       <div className="text-left text-sm pb-2 flex justify-between">
-        <label>Employer Search</label>
+        <label>Search for work done by an employee at a specific company</label>
         <label>{work.length} Results</label>
       </div>
       <div className="relative">
