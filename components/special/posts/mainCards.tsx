@@ -28,8 +28,8 @@ export default function MainCards({ email, font } : { email: string, font: strin
   return (
     <div className="mb-16">
       <div className="text-left text-sm pb-2 flex justify-between">
-        <label>Search for work done by an employee at a specific company</label>
-        <label>{work.length} Results</label>
+        <label className="text-xs sm:text-sm">Search for a specific company to see the work done by employees</label>
+        <label className="hidden sm:block">{work.length} Results</label>
       </div>
       <div className="relative">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -39,7 +39,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
         </div>
         <input
         className="block pl-10 w-full py-4 mb-8 rounded-lg border-2 border-slate-200 focus:outline-none focus:border-slate-300 transition"
-        placeholder="Airbnb, Google, Unemployed, etc."
+        placeholder="Airbnb, Unemployed, etc."
         onChange={(e) => setEmployer(e.target.value)}
         />
       </div>
