@@ -22,13 +22,10 @@ Here is what is used to build Portfoliwoah.
 - Vercel Blob
 
 ## Self Hosting
-Feel free to self host Portfoliwoah for your own organization. Please reach out to support@oustro.xyz in order to get instructions while documentation is being written.
+Do you like Portfoliwoah and want to host it yourself? [check out our self hosting guide.](https://github.com/Oustro/portfoliwoah/blob/main/SELF_HOSTING.md)
 
 ## Contributing
-We encourage contributing to Portfoliwoah! If you encounter a bug or think of a feature feel free to do the following:
-
-- [Open an issue](https://github.com/oustro/portfoliwoah/issues)
-- [Make a pull request](https://github.com/oustro/portfoliwoah/pull)
+We encourage contributing to Portfoliwoah! If you encounter a bug or think of a feature [check out our contributing guide.](https://github.com/Oustro/portfoliwoah/blob/main/CONTRIBUTING.md)
 
 ### Thanks to these folks for contributing!
 <img src="https://contrib.rocks/image?repo=oustro/portfoliwoah" />
