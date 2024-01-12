@@ -24,7 +24,6 @@ export default async function Login() {
   return (
     <main className="relative min-h-screen justify-center overflow-hidden transition-all px-4">
       <div className="mt-20 text-center">
-        <h1 className='mt-8 text-4xl sm:text-5xl'>Create Your <span className={ibm_plex_serif.className}>Portfoliwoah</span>.</h1>
         <Flow font={ibm_plex_serif.className}/>
       </div>
 

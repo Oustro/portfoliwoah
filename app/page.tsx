@@ -3,6 +3,8 @@ import { IBM_Plex_Serif } from "next/font/google"
 import BadgeOutline from "@/components/shared/badgeOutline"
 import LinkButton from "@/components/shared/linkButton"
 
+import Link from "next/link"
+
 import MainCards from "@/components/special/posts/mainCards"
 import Video from "@/components/special/video"
 
@@ -25,10 +27,10 @@ export default async function Home() {
       <div className="mt-20 text-center">
         <BadgeOutline>🥳 Welcome to the newly launched Portfoliwoah 🎉</BadgeOutline>
         <h1 className='mt-8 text-4xl sm:text-5xl'>For the Love of <span className={ibm_plex_serif.className}>Design</span>.</h1>
-        <p className="mt-8 text-xs sm:w-[80%] mx-auto sm:text-base">Share your work on Portfoliwoah so others across the industry can quickly find, appreciate, and be inspired by it.</p>
+        <p className="mt-8 text-xs sm:w-[80%] mx-auto sm:text-base">Portfoliwoah is an <span className="underline"><Link target="_blank" href="https://github.com/Oustro/portfoliwoah">open-source</Link></span> platform to share your work so others across the industry can quickly find, appreciate, and be inspired by it.</p>
         <div className="mt-8 text-center flex justify-center gap-4">
           <Video video="https://www.youtube.com/embed/JLJTnYzyRrg" />
-          <LinkButton link={session ? "/add" : "/register/login"}>Add your work</LinkButton>
+          <LinkButton link={session ? "/add" : "/register/signup?action=true"}>Add your own work</LinkButton>
         </div>
         <div className="mt-20 px-4 sm:px-16">
           <MainCards email={session?.email ?? ""} font={ibm_plex_serif.className} />
