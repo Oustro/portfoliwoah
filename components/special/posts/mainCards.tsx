@@ -56,7 +56,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
         <>
           {work.length === 0 ? (
             <div className="text-center w-full">
-              <p className={`${font} text-2xl mb-8`}>There&apos;s nothing here.</p>
+              <p className={`${font} text-2xl mb-8`}>It looks like nobody working there has posted on Portfoliwoah.</p>
             </div>
           ) : (
             <div className="grid sm:grid-cols-3 gap-4">
