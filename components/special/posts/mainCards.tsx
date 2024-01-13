@@ -29,7 +29,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
 
   return (
     <div className="mb-16">
-      <div className="text-left text-sm pb-2 flex justify-between">
+      {/* <div className="text-left text-sm pb-2 flex justify-between">
         <label className="text-xs sm:text-sm">Search for a specific company to see the work done by employees</label>
         <label className="hidden sm:block">{work.length} Results</label>
       </div>
@@ -44,7 +44,8 @@ export default function MainCards({ email, font } : { email: string, font: strin
         placeholder="Airbnb, Unemployed, etc."
         onChange={(e) => setEmployer(e.target.value)}
         />
-      </div>
+      </div> */}
+      <h1 className="mb-10 text-3xl">Explore the collection of work</h1>
       {loading ? (
         <div className="grid sm:grid-cols-3 gap-4">
           <CardSkeleton />
