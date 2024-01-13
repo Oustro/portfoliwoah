@@ -27,6 +27,7 @@ export default async function Home() {
       <div className="mt-20 text-center">
         <BadgeOutline>🥳 Welcome to the newly launched Portfoliwoah 🎉</BadgeOutline>
         <h1 className='mt-8 text-4xl sm:text-5xl'>For the Love of <span className={ibm_plex_serif.className}>Design</span>.</h1>
+        <h1 className='mt-4 text-xl sm:text-2xl'>A collection of work curated by us.</h1>
         <p className="mt-8 text-xs sm:w-[80%] mx-auto sm:text-base">Portfoliwoah is an <span className="underline"><Link target="_blank" href="https://github.com/Oustro/portfoliwoah">open-source</Link></span> platform to share your work so others across the industry can quickly find, appreciate, and be inspired by it.</p>
         <div className="mt-8 text-center flex justify-center gap-4">
           <Video video="https://www.youtube.com/embed/JLJTnYzyRrg" />
