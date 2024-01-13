@@ -59,7 +59,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
           {work.length === 0 ? (
             <div className="text-center w-full">
               <p className={`${font} text-2xl mb-8`}>It looks like nobody working there has posted on Portfoliwoah.</p>
-              <LinkButton link={email ? "/add" : "/register/signup?action=true"}>Add your own work</LinkButton>
+              <LinkButton link={email ? "/add" : "/register/signup?action=true"}>Add your work to Portfoliwoah</LinkButton>
             </div>
           ) : (
             <div className="grid sm:grid-cols-3 gap-4">
