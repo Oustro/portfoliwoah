@@ -5,6 +5,8 @@ import { cardData } from "@/lib/types"
 import { HiCursorClick } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa";
 
+import { formatNumbers } from "@/utils/number"
+
 export default function Card({ postInfo, email } : { postInfo: cardData, email: string }) {
 
   const addClick = async () => {
@@ -39,13 +41,12 @@ export default function Card({ postInfo, email } : { postInfo: cardData, email: 
         <div className="mt-2 px-1 text-left text-sm flex justify-between">
           <div>
             <div className="flex gap-1 items-center">
-              <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {postInfo.clicks}</p>
+              <p className="text-xs flex items-center gap-1 bg-slate-200 px-1 rounded"><HiCursorClick /> {formatNumbers(postInfo.clicks)}</p>
               <p>{postInfo.name}</p>
             </div>
           </div>
           <div className="text-right">
             <p>{postInfo.uname}</p>
-            <p className="text-xs">{postInfo.employer}</p>
           </div>
         </div>
       </div>

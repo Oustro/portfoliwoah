@@ -76,6 +76,9 @@ export default async function Nav() {
         </div>
       ) : (
         <div className="flex items-center gap-2">
+          <div className="hidden sm:block">
+            <LinkButtonHover link="https://github.com/Oustro/portfoliwoah"><code>&lt;Source Code /&gt;</code></LinkButtonHover>
+          </div>
           <LinkButtonHover link="/register/login">Login</LinkButtonHover>
           <LinkButton link="/register/signup">Sign Up</LinkButton>
         </div>

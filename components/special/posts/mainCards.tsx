@@ -7,6 +7,8 @@ import Card from "@/components/special/posts/card"
 
 import LinkButton from "@/components/shared/linkButton"
 
+import { formatNumbers } from "@/utils/number"
+
 export default function MainCards({ email, font } : { email: string, font: string }) {
 
   const [work, setWork] = useState([])
@@ -45,7 +47,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
         onChange={(e) => setEmployer(e.target.value)}
         />
       </div> */}
-      <h1 className="mb-10 text-3xl">Explore the collection of work</h1>
+      <h1 className="mb-10 text-3xl">Explore the collection of {formatNumbers(work.length)} works</h1>
       {loading ? (
         <div className="grid sm:grid-cols-3 gap-4">
           <CardSkeleton />

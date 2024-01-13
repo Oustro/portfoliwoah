@@ -33,7 +33,6 @@ export default function Card({ postInfo, name, employer } : { postInfo: projectD
           </div>
           <div className="text-right">
             <p>{name}</p>
-            <p className="text-xs">{employer}</p>
           </div>
         </div>
       </div>
