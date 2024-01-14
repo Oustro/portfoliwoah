@@ -74,7 +74,7 @@ export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo, act
             <span>Loading...</span>
           </div>
         ) : 
-          "Next"
+          "Sign Up"
         }
       </button>
     </form>

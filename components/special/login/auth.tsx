@@ -64,7 +64,7 @@ export default function Auth( { setStep, email, setEmail }: { setStep: Function,
               <span>Loading...</span>
             </div>
           ) : 
-            "Next"
+            "Login"
           }
         </button>
       </form>
