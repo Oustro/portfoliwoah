@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 
 import CardSkeleton from "@/components/shared/cardSkeleton"
 import Card from "@/components/special/posts/card"
+import Reasons from "@/components/special/reasons"
 
 import LinkButton from "@/components/shared/linkButton"
 
@@ -31,6 +32,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
 
   return (
     <div className="mb-16">
+      <Reasons font={font} work={work} />
       {/* <div className="text-left text-sm pb-2 flex justify-between">
         <label className="text-xs sm:text-sm">Search for a specific company to see the work done by employees</label>
         <label className="hidden sm:block">{work.length} Results</label>
@@ -47,7 +49,7 @@ export default function MainCards({ email, font } : { email: string, font: strin
         onChange={(e) => setEmployer(e.target.value)}
         />
       </div> */}
-      <h1 className="mb-10 text-3xl">Explore the collection of {formatNumbers(work.length)} works</h1>
+      <h1 className="mb-10 mt-16 text-3xl">Explore the collection of {formatNumbers(work.length)} works</h1>
       {loading ? (
         <div className="grid sm:grid-cols-3 gap-4">
           <CardSkeleton />

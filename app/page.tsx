@@ -32,7 +32,6 @@ export default async function Home() {
         <div className="mt-8 text-center flex justify-center gap-4">
           <LinkButton link={session ? "/add" : "/register/signup?action=true"}>Add your own work</LinkButton>
         </div>
-        <Reasons font={ibm_plex_serif.className} />
         <div className="mt-20 px-4 sm:px-16">
           <MainCards email={session?.email ?? ""} font={ibm_plex_serif.className} />
         </div>

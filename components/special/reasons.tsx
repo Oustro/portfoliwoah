@@ -1,7 +1,9 @@
 import Carousel from "@/components/special/carousel"
-import Video from "./video"
+import Video from "@/components/special/video"
 
-export default function Reasons({ font }: {font: string}) {
+import { cardData } from "@/lib/types"
+
+export default function Reasons({ font, work }: { font: string, work: cardData[]}) {
 
   return (
     <div className="mt-16 text-left items-center sm:flex sm:px-16">
@@ -12,7 +14,7 @@ export default function Reasons({ font }: {font: string}) {
           <Video video="https://www.youtube.com/embed/JLJTnYzyRrg" />
         </div>
       </div>
-      <Carousel />
+      <Carousel work={work} />
     </div>
   )
 }
