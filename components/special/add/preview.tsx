@@ -33,9 +33,9 @@ export default function Preview({ setStep, postInfo, name, employer }: { setStep
   return (
     <form onSubmit={(e) => handleSubmit(e)} className="mt-12 sm:w-[50%] p-4 mx-auto">
       {postInfo.image ? (
-        <Card postInfo={postInfo} name={name} employer={employer} />
+        <Card postInfo={postInfo} name={name} />
       ) : (
-        <CardSkeleton postInfo={postInfo} name={name} employer={employer} />
+        <CardSkeleton postInfo={postInfo} name={name} />
       )}
       <button type="submit" disabled={!postInfo.image || loading ? true: false} className="w-full mt-4 p-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition focus:outline-none disabled:bg-slate-300">
         {!postInfo.image || loading ? (

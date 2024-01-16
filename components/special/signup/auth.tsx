@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 
 import Spinner from "@/components/shared/spinner";
 
-export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo, action }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }, setErrorInfo: Function, action: string }) {
+export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo }: { setStep: Function, setUserInfo: Function, userInfo: { name: string, employer: string, email: string }, setErrorInfo: Function }) {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,7 +43,7 @@ export default function Auth({ setStep, setUserInfo, userInfo, setErrorInfo, act
 
     const signInResponse = await signIn('email', { 
       email: userInfo.email.trim(), 
-      callbackUrl: `${window.location.origin}`+ (action && "/add"),
+      callbackUrl: `${window.location.origin}/add`,
       redirect: false
     })
 

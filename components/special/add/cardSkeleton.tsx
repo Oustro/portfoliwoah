@@ -4,7 +4,7 @@ import { projectData } from "@/lib/types";
 
 import { HiCursorClick } from "react-icons/hi";
 
-export default function CardSkeleton({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
+export default function CardSkeleton({ postInfo, name } : { postInfo: projectData, name: string }) {
   return (
     <div className="group transition-all rounded-lg">
       <div className="animate-pulse bg-slate-200 rounded-lg">
@@ -26,7 +26,6 @@ export default function CardSkeleton({ postInfo, name, employer } : { postInfo: 
         </div>
         <div className="text-right">
           <p>{name}</p>
-          <p className="text-xs">{employer}</p>
         </div>
       </div>
     </div>

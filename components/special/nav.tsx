@@ -59,7 +59,7 @@ export default async function Nav() {
           <ImageDropDown imageSrc="/userIcon.png" altDescription="The Portfoliwoah logo in a circle." location="w-64 mt-2 -ml-52 sm:-ml-48">
             <div className="pb-4 text-right">
               <p>{session.name}</p>
-              <p className="text-xs mt-1 text-gray-600">Currently at {session.employer}</p>
+              <p className="text-xs mt-1 text-gray-600">{session.employer}</p>
             </div>
             {dropDownItems.map(( data, index ) => (
               <div key={index}>

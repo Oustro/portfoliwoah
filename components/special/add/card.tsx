@@ -6,7 +6,7 @@ import { HiCursorClick } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa";
 
 
-export default function Card({ postInfo, name, employer } : { postInfo: projectData, name: string, employer: string }) {
+export default function Card({ postInfo, name } : { postInfo: projectData, name: string }) {
 
   return (
     <a href={postInfo.link} target="_blank">
