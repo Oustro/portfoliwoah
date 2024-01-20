@@ -6,6 +6,7 @@ import CardSkeleton from "@/components/shared/cardSkeleton"
 import Card from "@/components/special/posts/card"
 import Reasons from "@/components/special/reasons"
 
+import Link from "next/link"
 import LinkButton from "@/components/shared/linkButton"
 
 import { formatNumbers } from "@/utils/number"
@@ -49,7 +50,15 @@ export default function MainCards({ email, font } : { email: string, font: strin
         onChange={(e) => setEmployer(e.target.value)}
         />
       </div> */}
-      <h1 className="mb-10 mt-16 text-3xl">Explore the collection of {formatNumbers(work.length)} works</h1>
+      <div className="mb-10 mt-16 ">
+        <h1 className="text-3xl">Explore the collection of {formatNumbers(work.length)} works</h1>
+        {email ? (
+          <p className="mb-10 text-sm mt-4">Learn how the ranking algorithm works <span className="underline"><Link href="/blog">here</Link></span>.</p>
+        ) : (
+          <p className="mb-10 text-sm mt-4">Influence the ranking algorithm (on GitHub) by logging in a clicking your favorite pieces of work. <span className="underline"><Link href="/register/login">Login here</Link></span>.</p>
+        )
+      }
+      </div>
       {loading ? (
         <div className="grid sm:grid-cols-3 gap-4">
           <CardSkeleton />
